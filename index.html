@@ -1,317 +1,2151 @@
-/* Cool avatar effects */ .floaty-avatar { animation: floatAvatar 3.5s ease-in-out infinite; filter: drop-shadow(0 0 18px rgba(6,182,212,0.45)); } @keyframes floatAvatar { 0%, 100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-10px) scale(1.02); } } .avatar-ring { background: conic-gradient(from 180deg, #06b6d4, #3b82f6, #8b5cf6, #06b6d4); padding: 3px; border-radius: 9999px; } /* PB Glow + Pulse (Style B) */ .pb-glow { border: 2px solid rgba(34, 197, 94, 0.55) !important; box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12), 0 18px 40px rgba(34, 197, 94, 0.18); background: linear-gradient(135deg, rgba(34, 197, 94, 0.10), rgba(6, 182, 212, 0.08)); } .pb-pulse { animation: pbPulse 1.5s ease-in-out infinite; } @keyframes pbPulse { 0%, 100% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.01); filter: brightness(1.06); } }
+<!doctype html>
+<html lang="en" class="h-full">
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tigersharks Swim Team</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  /* Cool avatar effects */
+.floaty-avatar {
+  animation: floatAvatar 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 18px rgba(6,182,212,0.45));
+}
 
+@keyframes floatAvatar {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+}
 
-￼
-Tigersharks Swim Team
-Excellence in Every Stroke
-👨‍👩‍👧 Parent Portal 🔐 Admin Login
-￼
-Tigersharks Swim Team
-Building Champions in and Out of the Pool
-Join our competitive swim team where dedication meets excellence. Under the guidance of experienced coaches, our swimmers develop technique, strength, and character that lasts a lifetime.
-📅 View Training Schedule ℹ️ Learn More
-￼
-￼
-￼
-📰
-Team News & Updates
-Stay informed with the latest team announcements
-No news available at this time.
-￼
-Meet Coach Hamidoo
-Head Coach & Team Director
-🎯
-Our Vision
-Building champions in and out of the pool. Every stroke brings us closer to excellence.
-🏅
-Our Values
-Discipline, teamwork, perseverance, and sportsmanship guide everything we do.
-💪
-Our Promise
-Personalized coaching to help every swimmer reach their full potential.
-📅
-Training Schedule
-Consistent practice makes perfect swimmers
-Weekday Sessions
-Mon & Wed: 6:30 AM - 7:20 AM
-Technique-focused morning sessions
-Extended Training
-Sun, Tue & Thu: 2:30 PM - 4:30 PM
-Dryland training + Swimming practice
-📍 Location: BISR Al-Waha Campus
-🏊‍♂️
-What We Offer
-Comprehensive training for all skill levels
-🏊‍♂️
-Expert Coaching
-Professional guidance from certified coaches
-📊
-Performance Tracking
-Monitor progress with detailed analytics
-🏆
-Competition Ready
-Regular meets and championship preparation
-👥
-Team Culture
-Supportive environment and lasting friendships
+.avatar-ring {
+  background: conic-gradient(from 180deg, #06b6d4, #3b82f6, #8b5cf6, #06b6d4);
+  padding: 3px;
+  border-radius: 9999px;
+}
+/* PB Glow + Pulse (Style B) */
+.pb-glow {
+  border: 2px solid rgba(34, 197, 94, 0.55) !important;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12), 0 18px 40px rgba(34, 197, 94, 0.18);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.10), rgba(6, 182, 212, 0.08));
+}
 
+.pb-pulse {
+  animation: pbPulse 1.5s ease-in-out infinite;
+}
 
-Ready to Dive In?
-Access the Parent Portal to track your swimmer's progress, view upcoming meets, and stay connected with the team.
-👨‍👩‍👧 Enter Parent Portal
-🔐
-Admin Login
-Enter your credentials to access the admin dashboard
-Admin Password
-🔓 Access Admin Dashboard Cancel
-￼
-Tigersharks Swim Team
-Coach Hamidoo - Head Coach
-ADMIN Logout
+@keyframes pbPulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.01); filter: brightness(1.06); }
+}
+<style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
+    .slide-in {
+      animation: slideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
 
-Welcome Back, Coach Hamidoo! 🏊‍♂️
-Manage your team, track performance, and schedule meets.
-🎯
-Our Vision
-Building champions in and out of the pool. Every stroke brings us closer to excellence.
-📅
-Training Schedule
-Mon & Wed: 6:30 AM - 7:20 AM
-Sun, Tue & Thu: 2:30 PM - 4:30 PM (Dryland & Swimming)
-📍 BISR Al-Waha Campus
-💪
-Coach's Message
-"Champions are made when nobody is watching. Your dedication today shapes your victories tomorrow!"
-- Coach Hamidoo
-Total Swimmers
-0
-🏊‍♂️
-Times Recorded
-0
-⏱️
-Upcoming Meets
-0
-📅
-🏊‍♂️ Swimmers ⏱️ Times 📅 Meets 📰 News ⚙️ Settings
-➕
-Add New Swimmer
-Swimmer Name *
-Age *
-Parent Name *
-Parent Email *
-🏊‍♂️ Add Swimmer
-👥
-Team Roster
-No swimmers added yet. Add your first swimmer above!
-⏱️
-Record New Time
-Swimmer *  Select swimmer 
-Event *  Select event 50m Freestyle 100m Freestyle 50m Backstroke 100m Backstroke 50m Breaststroke 100m Breaststroke 50m Butterfly 100m Butterfly 200m IM 
-Time (mm:ss.ms) *
-Date *
-Meet Name (Optional)
-⏱️ Record Time
-📊
-Recorded Times
-No times recorded yet. Add times using the form above!
-📅
-Add Upcoming Meet
-Meet Name *
-Date *
-Location *
-Notes
-📅 Add Meet
-🗓️
-Upcoming Meets
-No upcoming meets scheduled. Add meets using the form above!
-📢
-Team News Feed
-Use the Data button above to post news
-No news posted yet. Use the Data button above to add team news!
-⚙️
-Team Settings
-Team Name
-Coach Name
-Team Tagline
-Team Description
-Training Schedule
-Weekday Schedule
-Extended Training
-Training Location
-Admin Password
-Change Admin Password
-Leave blank to keep current password
-💾 Save Settings
-￼
-Tigersharks Swim Team
-👨‍👩‍👧 Parent Portal
-← Back to Home
-👨‍👩‍👧
-Parent Portal - View Your Child's Progress
-Select Your Swimmer  Choose your child... 
-￼
-Swimmer Performance
-Progress & Personal Bests
-Total Swims
-0
-Personal Records
-0
-Events Competed
-0
-📈
-Swim Time Progression
+    @keyframes slideIn {
+      from { transform: translateX(-100%) scale(0.8); opacity: 0; }
+      to { transform: translateX(0) scale(1); opacity: 1; }
+    }
 
-📊
-Performance by Event
+    .zoom-in {
+      animation: zoomIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
 
-📅
-Upcoming Meets
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
-📰
-Team News & Updates
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
 
-const defaultConfig = { team_name: "Tigersharks Swim Team", coach_name: "Coach Hamidoo", welcome_message: "Manage your team, track performance, and schedule meets.", hero_tagline: "Building Champions in and Out of the Pool", hero_description: "Join our competitive swim team where dedication meets excellence. Under the guidance of experienced coaches, our swimmers develop technique, strength, and character that lasts a lifetime.", weekday_schedule: "Mon & Wed: 6:30 AM - 7:20 AM", weekend_schedule: "Sun, Tue & Thu: 2:30 PM - 4:30 PM (Dryland & Swimming)", training_location: "BISR Al-Waha Campus", admin_password: "swim2024", background_color: "#0f172a", surface_color: "#ffffff", text_color: "#1f2937", primary_action_color: "#2563eb", secondary_action_color: "#764ba2", font_family: "Inter", font_size: 16 }; let allData = []; let currentView = 'landing'; let adminView = 'swimmers'; let recordCount = 0; let isAuthenticated = false; // ✅ Local storage fallback (works on Vercel) const STORAGE_KEY = "tigersharks_records_v1"; function loadLocalData() { try { const raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : []; } catch { return []; } } function saveLocalData(data) { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } function triggerDataChanged() { dataHandler.onDataChanged(allData); } // Wrap SDK calls so the site works with or without /_sdk async function createRecord(record) { // If builder SDK exists, use it if (window.dataSdk && window.dataSdk.create) { return await window.dataSdk.create(record); } // Otherwise save locally record.__backendId = record.id; // so your edit/delete works allData.push(record); saveLocalData(allData); triggerDataChanged(); return { isOk: true }; } async function updateRecord(record) { if (window.dataSdk && window.dataSdk.update) { return await window.dataSdk.update(record); } const idx = allData.findIndex(r => r.__backendId === record.__backendId); if (idx !== -1) allData[idx] = record; saveLocalData(allData); triggerDataChanged(); return { isOk: true }; } async function deleteRecordLocal(record) { if (window.dataSdk && window.dataSdk.delete) { return await window.dataSdk.delete(record); } allData = allData.filter(r => r.__backendId !== record.__backendId); saveLocalData(allData); triggerDataChanged(); return { isOk: true }; } const dataHandler = { onDataChanged(data) { allData = data; recordCount = data.length; updateStatistics(); renderAdminView(); updateSwimmerDropdown(); updateParentPortalDropdown(); } }; async function onConfigChange(config) { const teamName = config.team_name || defaultConfig.team_name; const coachName = config.coach_name || defaultConfig.coach_name; const welcomeMessage = config.welcome_message || defaultConfig.welcome_message; const heroTagline = config.hero_tagline || defaultConfig.hero_tagline; const heroDescription = config.hero_description || defaultConfig.hero_description; const weekdaySchedule = config.weekday_schedule || defaultConfig.weekday_schedule; const weekendSchedule = config.weekend_schedule || defaultConfig.weekend_schedule; const trainingLocation = config.training_location || defaultConfig.training_location; const backgroundColor = config.background_color || defaultConfig.background_color; const surfaceColor = config.surface_color || defaultConfig.surface_color; const textColor = config.text_color || defaultConfig.text_color; const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color; const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color; const fontFamily = config.font_family || defaultConfig.font_family; const fontSize = config.font_size || defaultConfig.font_size; // Update landing page const navTeamName = document.getElementById('nav-team-name'); const heroTeamName = document.getElementById('hero-team-name'); const heroTaglineEl = document.getElementById('hero-tagline'); const heroDescriptionEl = document.getElementById('hero-description'); const coachSectionName = document.getElementById('coach-section-name'); const scheduleWeekday = document.getElementById('schedule-weekday'); const scheduleWeekend = document.getElementById('schedule-weekend'); const scheduleLocation = document.getElementById('schedule-location'); if (navTeamName) { navTeamName.textContent = teamName; navTeamName.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; } if (heroTeamName) { heroTeamName.textContent = teamName; heroTeamName.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; } if (heroTaglineEl) { heroTaglineEl.textContent = heroTagline; heroTaglineEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; } if (heroDescriptionEl) { heroDescriptionEl.textContent = heroDescription; heroDescriptionEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; } if (coachSectionName) { coachSectionName.textContent = `Meet ${coachName}`; coachSectionName.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; } if (scheduleWeekday) { scheduleWeekday.textContent = weekdaySchedule; scheduleWeekday.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; } if (scheduleWeekend) { scheduleWeekend.textContent = weekendSchedule; scheduleWeekend.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; } if (scheduleLocation) { scheduleLocation.textContent = trainingLocation; scheduleLocation.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; } // Update admin dashboard const teamNameEl = document.getElementById('team-name'); const coachNameEl = document.getElementById('coach-name'); const welcomeMessageEl = document.getElementById('welcome-message'); const weekdayEl = document.getElementById('weekday-schedule'); const weekendEl = document.getElementById('weekend-schedule'); const locationEl = document.getElementById('training-location'); if (teamNameEl) { teamNameEl.textContent = teamName; teamNameEl.style.color = textColor; teamNameEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; teamNameEl.style.fontSize = `${fontSize * 1.5}px`; } if (coachNameEl) { coachNameEl.textContent = `${coachName} - Head Coach`; coachNameEl.style.color = textColor; coachNameEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; coachNameEl.style.fontSize = `${fontSize * 0.875}px`; } if (welcomeMessageEl) { welcomeMessageEl.textContent = welcomeMessage; welcomeMessageEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; welcomeMessageEl.style.fontSize = `${fontSize * 1.25}px`; } if (weekdayEl) { weekdayEl.textContent = weekdaySchedule; weekdayEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; weekdayEl.style.fontSize = `${fontSize * 0.875}px`; } if (weekendEl) { weekendEl.textContent = weekendSchedule; weekendEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; weekendEl.style.fontSize = `${fontSize * 0.875}px`; } if (locationEl) { locationEl.textContent = `📍 ${trainingLocation}`; locationEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; locationEl.style.fontSize = `${fontSize * 0.75}px`; } // Update parent portal const parentTeamName = document.getElementById('parent-team-name'); if (parentTeamName) { parentTeamName.textContent = teamName; parentTeamName.style.color = textColor; parentTeamName.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; } document.getElementById('app').style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${secondaryActionColor} 100%)`; const buttons = document.querySelectorAll('button[type="submit"]'); buttons.forEach(btn => { btn.style.background = `linear-gradient(to right, ${primaryActionColor}, ${secondaryActionColor})`; btn.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`; btn.style.fontSize = `${fontSize}px`; }); } // Initialize SDKs (async () => { // If you're running this on the original builder host, dataSdk exists. // On Vercel/Netlify, dataSdk usually doesn't exist, so we fall back to localStorage. if (window.dataSdk && window.dataSdk.init) { const initResult = await window.dataSdk.init(dataHandler); if (!initResult.isOk) { console.error("Failed to initialize data SDK"); } } else { // Local fallback (so Add Swimmer / Record Time works on your own hosting) allData = loadLocalData().map(r => ({ ...r, __backendId: r.__backendId || r.id })); recordCount = allData.length; triggerDataChanged(); } if (window.elementSdk) { window.elementSdk.init({ defaultConfig, onConfigChange, mapToCapabilities: (config) => ({ recolorables: [ { get: () => config.background_color || defaultConfig.background_color, set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); } }, { get: () => config.surface_color || defaultConfig.surface_color, set: (value) => { config.surface_color = value; window.elementSdk.setConfig({ surface_color: value }); } }, { get: () => config.text_color || defaultConfig.text_color, set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); } }, { get: () => config.primary_action_color || defaultConfig.primary_action_color, set: (value) => { config.primary_action_color = value; window.elementSdk.setConfig({ primary_action_color: value }); } }, { get: () => config.secondary_action_color || defaultConfig.secondary_action_color, set: (value) => { config.secondary_action_color = value; window.elementSdk.setConfig({ secondary_action_color: value }); } } ], borderables: [], fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); } }, fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); } } }), mapToEditPanelValues: (config) => new Map([ ["team_name", config.team_name || defaultConfig.team_name], ["coach_name", config.coach_name || defaultConfig.coach_name], ["welcome_message", config.welcome_message || defaultConfig.welcome_message], ["hero_tagline", config.hero_tagline || defaultConfig.hero_tagline], ["hero_description", config.hero_description || defaultConfig.hero_description], ["weekday_schedule", config.weekday_schedule || defaultConfig.weekday_schedule], ["weekend_schedule", config.weekend_schedule || defaultConfig.weekend_schedule], ["training_location", config.training_location || defaultConfig.training_location], ["admin_password", config.admin_password || defaultConfig.admin_password] ]) }); await onConfigChange(window.elementSdk.config); } })(); // Navigation handlers document.getElementById('btn-parent-portal').addEventListener('click', () => showView('parent-portal')); document.getElementById('btn-cta-parent-portal').addEventListener('click', () => showView('parent-portal')); document.getElementById('btn-admin-login').addEventListener('click', () => { document.getElementById('admin-login-modal').classList.remove('hidden'); }); document.getElementById('btn-cancel-login').addEventListener('click', () => { document.getElementById('admin-login-modal').classList.add('hidden'); document.getElementById('admin-password').value = ''; }); document.getElementById('parent-back-btn').addEventListener('click', () => showView('landing')); document.getElementById('admin-logout-btn').addEventListener('click', () => { isAuthenticated = false; showView('landing'); }); document.getElementById('btn-view-schedule').addEventListener('click', () => { document.getElementById('team-info-section').scrollIntoView({ behavior: 'smooth' }); }); document.getElementById('btn-scroll-info').addEventListener('click', () => { document.getElementById('team-info-section').scrollIntoView({ behavior: 'smooth' }); }); // Admin login form document.getElementById('admin-login-form').addEventListener('submit', (e) => { e.preventDefault(); const config = window.elementSdk ? window.elementSdk.config : defaultConfig; const adminPassword = config.admin_password || defaultConfig.admin_password; const enteredPassword = document.getElementById('admin-password').value; if (enteredPassword === adminPassword) { isAuthenticated = true; document.getElementById('admin-login-modal').classList.add('hidden'); showView('admin'); document.getElementById('admin-password').value = ''; } else { showMessage('Incorrect password. Please try again.'); document.getElementById('admin-password').value = ''; } }); function showView(view) { document.getElementById('landing-page').classList.toggle('hidden', view !== 'landing'); document.getElementById('admin-dashboard').classList.toggle('hidden', view !== 'admin'); document.getElementById('parent-portal-view').classList.toggle('hidden', view !== 'parent-portal'); currentView = view; if (view === 'parent-portal') { updateParentPortalDropdown(); } else if (view === 'admin') { switchAdminTab('swimmers'); } } // Admin tab navigation document.getElementById('tab-swimmers').addEventListener('click', () => switchAdminTab('swimmers')); document.getElementById('tab-times').addEventListener('click', () => switchAdminTab('times')); document.getElementById('tab-meets').addEventListener('click', () => switchAdminTab('meets')); document.getElementById('tab-news').addEventListener('click', () => switchAdminTab('news')); document.getElementById('tab-settings').addEventListener('click', () => switchAdminTab('settings')); function switchAdminTab(tab) { adminView = tab; const tabs = ['swimmers', 'times', 'meets', 'news', 'settings']; tabs.forEach(t => { const btn = document.getElementById(`tab-${t}`); if (t === tab) { btn.style.background = 'linear-gradient(to right, #06b6d4, #2563eb)'; btn.classList.add('shadow-md', 'text-white'); btn.classList.remove('text-gray-700', 'hover:bg-gray-100'); } else { btn.style.background = ''; btn.classList.remove('text-white', 'shadow-md'); btn.classList.add('text-gray-700', 'hover:bg-gray-100'); } }); document.getElementById('view-swimmers').classList.toggle('hidden', tab !== 'swimmers'); document.getElementById('view-times').classList.toggle('hidden', tab !== 'times'); document.getElementById('view-meets').classList.toggle('hidden', tab !== 'meets'); document.getElementById('view-news').classList.toggle('hidden', tab !== 'news'); document.getElementById('view-settings').classList.toggle('hidden', tab !== 'settings'); if (tab === 'settings') { loadSettingsForm(); } } function updateStatistics() { const swimmers = allData.filter(d => d.type === 'swimmer'); const times = allData.filter(d => d.type === 'time'); const meets = allData.filter(d => d.type === 'meet'); document.getElementById('stat-swimmers').textContent = swimmers.length; document.getElementById('stat-times').textContent = times.length; document.getElementById('stat-meets').textContent = meets.length; } // Add swimmer form document.getElementById('form-add-swimmer').addEventListener('submit', async (e) => { e.preventDefault(); const form = e.target; const editId = form.dataset.editId; if (!editId && recordCount >= 999) { showMessage('Maximum limit of 999 records reached. Please delete some records first.'); return; } const btn = document.getElementById('btn-add-swimmer'); btn.disabled = true; btn.textContent = editId ? 'Updating...' : 'Adding...'; if (editId) { const existingSwimmer = allData.find(r => r.__backendId === editId); if (existingSwimmer) { existingSwimmer.swimmer_name = document.getElementById('swimmer-name').value; existingSwimmer.age = parseInt(document.getElementById('swimmer-age').value); existingSwimmer.parent_name = document.getElementById('parent-name').value; existingSwimmer.parent_email = document.getElementById('parent-email').value; const result = await updateRecord(existingSwimmer); btn.disabled = false; btn.textContent = '🏊‍♂️ Add Swimmer'; if (result.isOk) { form.reset(); delete form.dataset.editId; document.querySelector('#view-swimmers h2').textContent = 'Add New Swimmer'; const cancelBtn = document.querySelector('#form-add-swimmer button[type="button"]'); if (cancelBtn) cancelBtn.remove(); showMessage('Swimmer updated successfully!', 'success'); } else { showMessage('Failed to update swimmer. Please try again.'); btn.textContent = '💾 Update Swimmer'; } } } else { const swimmer = { id: Date.now().toString(), type: 'swimmer', swimmer_name: document.getElementById('swimmer-name').value, age: parseInt(document.getElementById('swimmer-age').value), parent_name: document.getElementById('parent-name').value, parent_email: document.getElementById('parent-email').value, created_at: new Date().toISOString() }; const result = await createRecord(swimmer); btn.disabled = false; btn.textContent = '🏊‍♂️ Add Swimmer'; if (result.isOk) { e.target.reset(); showMessage('Swimmer added successfully!', 'success'); } else { showMessage('Failed to add swimmer. Please try again.'); } } }); // Add time form document.getElementById('form-add-time').addEventListener('submit', async (e) => { e.preventDefault(); if (recordCount >= 999) { showMessage('Maximum limit of 999 records reached. Please delete some records first.'); return; } const btn = document.getElementById('btn-add-time'); btn.disabled = true; btn.textContent = 'Recording...'; const time = { id: Date.now().toString(), type: 'time', swimmer_name: document.getElementById('time-swimmer').value, event_name: document.getElementById('event-name').value, time: document.getElementById('time-value').value, date: document.getElementById('time-date').value, meet_name: document.getElementById('time-meet-name').value || '', created_at: new Date().toISOString() }; const result = await createRecord(time); btn.disabled = false; btn.textContent = '⏱️ Record Time'; if (result.isOk) { e.target.reset(); } else { showMessage('Failed to record time. Please try again.'); } }); // Add meet form document.getElementById('form-add-meet').addEventListener('submit', async (e) => { e.preventDefault(); if (recordCount >= 999) { showMessage('Maximum limit of 999 records reached. Please delete some records first.'); return; } const btn = document.getElementById('btn-add-meet'); btn.disabled = true; btn.textContent = 'Adding...'; const meet = { id: Date.now().toString(), type: 'meet', event_name: document.getElementById('meet-name').value, date: document.getElementById('meet-date').value, meet_location: document.getElementById('meet-location').value, notes: document.getElementById('meet-notes').value || '', created_at: new Date().toISOString() }; const result = await createRecord(meet); btn.disabled = false; btn.textContent = '📅 Add Meet'; if (result.isOk) { e.target.reset(); } else { showMessage('Failed to add meet. Please try again.'); } }); // Settings form document.getElementById('form-settings').addEventListener('submit', async (e) => { e.preventDefault(); const btn = document.getElementById('btn-save-settings'); btn.disabled = true; btn.textContent = 'Saving...'; const config = window.elementSdk ? window.elementSdk.config : defaultConfig; const updates = {}; const teamName = document.getElementById('settings-team-name').value; const coachName = document.getElementById('settings-coach-name').value; const tagline = document.getElementById('settings-tagline').value; const description = document.getElementById('settings-description').value; const weekday = document.getElementById('settings-weekday').value; const weekend = document.getElementById('settings-weekend').value; const location = document.getElementById('settings-location').value; const password = document.getElementById('settings-password').value; if (teamName) updates.team_name = teamName; if (coachName) updates.coach_name = coachName; if (tagline) updates.hero_tagline = tagline; if (description) updates.hero_description = description; if (weekday) updates.weekday_schedule = weekday; if (weekend) updates.weekend_schedule = weekend; if (location) updates.training_location = location; if (password) updates.admin_password = password; if (window.elementSdk && Object.keys(updates).length > 0) { await window.elementSdk.setConfig(updates); showMessage('Settings saved successfully!', 'success'); if (password) { document.getElementById('settings-password').value = ''; } } btn.disabled = false; btn.textContent = '💾 Save Settings'; }); function loadSettingsForm() { const config = window.elementSdk ? window.elementSdk.config : defaultConfig; document.getElementById('settings-team-name').value = config.team_name || defaultConfig.team_name; document.getElementById('settings-coach-name').value = config.coach_name || defaultConfig.coach_name; document.getElementById('settings-tagline').value = config.hero_tagline || defaultConfig.hero_tagline; document.getElementById('settings-description').value = config.hero_description || defaultConfig.hero_description; document.getElementById('settings-weekday').value = config.weekday_schedule || defaultConfig.weekday_schedule; document.getElementById('settings-weekend').value = config.weekend_schedule || defaultConfig.weekend_schedule; document.getElementById('settings-location').value = config.training_location || defaultConfig.training_location; } function renderAdminView() { switch(adminView) { case 'swimmers': renderSwimmers(); break; case 'times': renderTimes(); break; case 'meets': renderMeets(); break; case 'news': renderNews(); break; } renderLandingNews(); } function renderSwimmers() { const swimmers = allData.filter(d => d.type === 'swimmer'); const container = document.getElementById('swimmers-list'); if (swimmers.length === 0) { container.innerHTML = '
-No swimmers added yet. Add your first swimmer above!
-'; return; } container.innerHTML = swimmers.map(swimmer => `
-🏊‍♂️ ${swimmer.swimmer_name}
-🎂
-Age
-${swimmer.age} years
-👤
-Parent
-${swimmer.parent_name}
-✉️
-Email
-${swimmer.parent_email}
-✏️ Edit 🗑️ Delete
-`).join(''); } function renderNews() { const news = allData.filter(d => d.type === 'news'); const container = document.getElementById('news-list'); if (news.length === 0) { container.innerHTML = '
-No news posted yet. Use the Data button above to add team news!
-'; return; } const sortedNews = news.sort((a, b) => new Date(b.date) - new Date(a.date)); container.innerHTML = sortedNews.map(item => { let mediaHTML = ''; if (item.image_url) { mediaHTML += `
-￼
-`; } if (item.video_url) { const isYouTube = item.video_url.includes('youtube.com') || item.video_url.includes('youtu.be'); let videoId = ''; if (isYouTube) { const urlObj = new URL(item.video_url); videoId = urlObj.searchParams.get('v') || urlObj.pathname.split('/').pop(); mediaHTML += `
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
 
-`; } else { mediaHTML += `
-Your browser does not support the video tag.
-`; } } return `
-📰
-${item.news_title}
-${new Date(item.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-${item.news_content}
-${mediaHTML}
-🗑️ Delete
-`; }).join(''); } function renderLandingNews() { const news = allData.filter(d => d.type === 'news'); const container = document.getElementById('landing-news-list'); if (!container) return; if (news.length === 0) { container.innerHTML = '
-No news available at this time.
-'; return; } const sortedNews = news.sort((a, b) => new Date(b.date) - new Date(a.date)); container.innerHTML = sortedNews.map(item => { let mediaHTML = ''; if (item.image_url) { mediaHTML += `
-￼
-`; } if (item.video_url) { const isYouTube = item.video_url.includes('youtube.com') || item.video_url.includes('youtu.be'); if (isYouTube) { const urlObj = new URL(item.video_url); const videoId = urlObj.searchParams.get('v') || urlObj.pathname.split('/').pop(); mediaHTML += `
+    .wave {
+      animation: wave 20s linear infinite;
+    }
 
-`; } else { mediaHTML += `
-Your browser does not support the video tag.
-`; } } return `
-📰
-${item.news_title}
-${new Date(item.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-${item.news_content}
-${mediaHTML}
-`; }).join(''); } function renderTimes() { const times = allData.filter(d => d.type === 'time'); const container = document.getElementById('times-list'); if (times.length === 0) { container.innerHTML = '
-No times recorded yet. Add times using the form above!
-'; return; } const sortedTimes = times.sort((a, b) => new Date(b.date) - new Date(a.date)); container.innerHTML = sortedTimes.map(time => `
-${time.swimmer_name}
-${time.event_name}
-Time
-${time.time}
-Date
-${new Date(time.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-${time.meet_name ? `
-Meet: ${time.meet_name}
-` : ''}
-🗑️ Delete
-`).join(''); } function renderMeets() { const meets = allData.filter(d => d.type === 'meet'); const container = document.getElementById('meets-list'); if (meets.length === 0) { container.innerHTML = '
-No upcoming meets scheduled. Add meets using the form above!
-'; return; } const sortedMeets = meets.sort((a, b) => new Date(a.date) - new Date(b.date)); container.innerHTML = sortedMeets.map(meet => `
-${meet.event_name}
-📅
-Date
-${new Date(meet.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-📍
-Location
-${meet.meet_location}
-${meet.notes ? `
-📝 Important Notes
-${meet.notes}
-` : ''}
-🗑️ Delete
-`).join(''); } function updateSwimmerDropdown() { const swimmers = allData.filter(d => d.type === 'swimmer'); const select = document.getElementById('time-swimmer'); const currentValue = select.value; select.innerHTML = 'Select swimmer' + swimmers.map(s => `${s.swimmer_name}`).join(''); if (currentValue && swimmers.some(s => s.swimmer_name === currentValue)) { select.value = currentValue; } } function updateParentPortalDropdown() { const swimmers = allData.filter(d => d.type === 'swimmer'); const select = document.getElementById('parent-swimmer-select'); select.innerHTML = 'Choose your child...' + swimmers.map(s => `${s.swimmer_name}`).join(''); } document.getElementById('parent-swimmer-select').addEventListener('change', (e) => { const swimmerName = e.target.value; if (swimmerName) { renderParentPortal(swimmerName); document.getElementById('parent-portal-content').classList.remove('hidden'); } else { document.getElementById('parent-portal-content').classList.add('hidden'); } }); function renderParentPortal(swimmerName) { const swimmerTimes = allData.filter(d => d.type === 'time' && d.swimmer_name === swimmerName); const meets = allData.filter(d => d.type === 'meet'); const news = allData.filter(d => d.type === 'news'); document.getElementById('parent-swimmer-name').textContent = `${swimmerName}'s Performance`; const totalSwims = swimmerTimes.length; const uniqueEvents = new Set(swimmerTimes.map(t => t.event_name)).size; const eventBestTimes = {}; swimmerTimes.forEach(time => { if (!eventBestTimes[time.event_name] || timeToSeconds(time.time) < timeToSeconds(eventBestTimes[time.event_name].time)) { eventBestTimes[time.event_name] = time; } }); const personalRecords = Object.keys(eventBestTimes).length; document.getElementById('parent-stat-swims').textContent = totalSwims; document.getElementById('parent-stat-prs').textContent = personalRecords; document.getElementById('parent-stat-events').textContent = uniqueEvents; renderProgressionChart(swimmerName, swimmerTimes); renderEventBreakdown(swimmerName, swimmerTimes); renderParentMeets(meets); renderParentNews(news); } function renderProgressionChart(swimmerName, swimmerTimes) { const container = document.getElementById('parent-progression-chart'); if (swimmerTimes.length === 0) { container.innerHTML = '
-No times recorded yet to show progression.
-'; return; } const eventGroups = {}; swimmerTimes.forEach(time => { if (!eventGroups[time.event_name]) { eventGroups[time.event_name] = []; } eventGroups[time.event_name].push(time); }); const chartsHTML = Object.entries(eventGroups).map(([eventName, times], eventIndex) => { const sortedTimes = times.sort((a, b) => new Date(a.date) - new Date(b.date)); if (sortedTimes.length < 2) { return `
-${eventName}
-Need at least 2 recorded times to show progression
-`; } const timeValues = sortedTimes.map(t => timeToSeconds(t.time)); const minTime = Math.min(...timeValues); const maxTime = Math.max(...timeValues); const timeRange = maxTime - minTime; const padding = timeRange * 0.2 || 1; const chartMin = minTime - padding; const chartMax = maxTime + padding; const chartRange = chartMax - chartMin; const chartHeight = 300; const chartWidth = 100; const leftMargin = 60; const rightMargin = 20; const topMargin = 20; const bottomMargin = 60; const points = sortedTimes.map((time, index) => { const x = leftMargin + (index / (sortedTimes.length - 1)) * (chartWidth - leftMargin - rightMargin); const seconds = timeToSeconds(time.time); const y = topMargin + ((chartMax - seconds) / chartRange) * (chartHeight - topMargin - bottomMargin); return { x, y, time, seconds, index }; }); const pathData = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x}% ${p.y}`).join(' '); const yAxisLabels = []; const numLabels = 5; for (let i = 0; i <= numLabels; i++) { const seconds = chartMin + (i / numLabels) * chartRange; const y = topMargin + ((chartMax - seconds) / chartRange) * (chartHeight - topMargin - bottomMargin); yAxisLabels.push({ y, label: secondsToTime(seconds) }); } const firstTime = timeValues[0]; const lastTime = timeValues[timeValues.length - 1]; const improvement = firstTime - lastTime; const improvementPercent = (improvement / firstTime * 100).toFixed(1); let trendHTML = ''; if (improvement > 0) { trendHTML = `↓ Improved by ${improvement.toFixed(2)}s (${improvementPercent}%)`; } else if (improvement < 0) { trendHTML = `↑ Slower by ${Math.abs(improvement).toFixed(2)}s (${Math.abs(improvementPercent)}%)`; } else { trendHTML = `→ No change`; } const colors = ['#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981']; const lineColor = colors[eventIndex % colors.length]; return `
-${eventName}
-${trendHTML}
-${yAxisLabels.map(label => `
-${label.label}
-`).join('')} ${yAxisLabels.map(label => ` `).join('')} ${points.map(p => ` `).join('')} ${points.map(p => { const date = new Date(p.time.date); const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); return `
-${label}
-${p.time.time}
-`; }).join('')}
-First Time
-${sortedTimes[0].time}
-${new Date(sortedTimes[0].date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-Best Time
-${secondsToTime(minTime)}
-Latest Time
-${sortedTimes[sortedTimes.length - 1].time}
-${new Date(sortedTimes[sortedTimes.length - 1].date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-`; }).join(''); container.innerHTML = chartsHTML || '
-No progression data available.
-'; } function secondsToTime(seconds) { const mins = Math.floor(seconds / 60); const secs = (seconds % 60).toFixed(2); return `${mins}:${secs.padStart(5, '0')}`; } function renderEventBreakdown(swimmerName, swimmerTimes) { const container = document.getElementById('parent-event-breakdown'); if (swimmerTimes.length === 0) { container.innerHTML = '
-No times recorded yet.
-'; return; } const eventGroups = {}; swimmerTimes.forEach(time => { if (!eventGroups[time.event_name]) { eventGroups[time.event_name] = []; } eventGroups[time.event_name].push(time); }); container.innerHTML = Object.entries(eventGroups).map(([eventName, times]) => { const sortedTimes = times.sort((a, b) => new Date(b.date) - new Date(a.date)); const bestTime = times.reduce((best, current) => timeToSeconds(current.time) < timeToSeconds(best.time) ? current : best ); let improvementHTML = ''; if (sortedTimes.length > 1) { const latestTime = sortedTimes[0]; const oldestTime = sortedTimes[sortedTimes.length - 1]; const improvement = ((timeToSeconds(oldestTime.time) - timeToSeconds(latestTime.time)) / timeToSeconds(oldestTime.time) * 100); if (improvement > 0) { improvementHTML = `↓ ${improvement.toFixed(1)}% faster`; } else if (improvement < 0) { improvementHTML = `↑ ${Math.abs(improvement).toFixed(1)}% slower`; } } return `
-${eventName}
-${improvementHTML ? `
-${improvementHTML}
-` : ''}
-🏆 Personal Best
-${bestTime.time}
-${new Date(bestTime.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-${bestTime.meet_name ? `
-${bestTime.meet_name}
-` : ''}
-All Times (${sortedTimes.length} total):
-${sortedTimes.map(time => { const isBest = time.time === bestTime.time && time.date === bestTime.date; const diff = timeToSeconds(time.time) - timeToSeconds(bestTime.time); const diffDisplay = diff === 0 ? 'PR' : `+${diff.toFixed(2)}s`; return ` `; }).join('')}
-Date
-Time
-Meet
-vs Best
-${new Date(time.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-${time.time} ${isBest ? '🏆' : ''}
-${time.meet_name || 'Practice'}
-${diffDisplay}
-`; }).join(''); } function renderParentMeets(meets) { const container = document.getElementById('parent-meets-list'); if (meets.length === 0) { container.innerHTML = '
-No upcoming meets scheduled.
-'; return; } const sortedMeets = meets.sort((a, b) => new Date(a.date) - new Date(b.date)); container.innerHTML = sortedMeets.map(meet => `
-${meet.event_name}
-📅
-Date: ${new Date(meet.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-📍
-Location: ${meet.meet_location}
-${meet.notes ? `
-📝 Notes: ${meet.notes}
-` : ''}
-`).join(''); } function renderParentNews(news) { const container = document.getElementById('parent-news-list'); if (news.length === 0) { container.innerHTML = '
-No team news available yet.
-'; return; } const sortedNews = news.sort((a, b) => new Date(b.date) - new Date(a.date)); container.innerHTML = sortedNews.map(item => { let mediaHTML = ''; if (item.image_url) { mediaHTML += `
-￼
-`; } if (item.video_url) { const isYouTube = item.video_url.includes('youtube.com') || item.video_url.includes('youtu.be'); if (isYouTube) { const urlObj = new URL(item.video_url); const videoId = urlObj.searchParams.get('v') || urlObj.pathname.split('/').pop(); mediaHTML += `
+    @keyframes wave {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
 
-`; } else { mediaHTML += `
-Your browser does not support the video tag.
-`; } } return `
-📰
-${item.news_title}
-${new Date(item.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-${item.news_content}
-${mediaHTML}
-`; }).join(''); } function timeToSeconds(timeString) { const parts = timeString.split(':'); const minutes = parseInt(parts[0]); const seconds = parseFloat(parts[1]); return minutes * 60 + seconds; } async function deleteRecord(backendId) { const record = allData.find(r => r.__backendId === backendId); if (!record) return; const result = await deleteRecordLocal(record); if (!result.isOk) { showMessage('Failed to delete record. Please try again.'); } } function editSwimmer(backendId) { const swimmer = allData.find(r => r.__backendId === backendId && r.type === 'swimmer'); if (!swimmer) return; document.getElementById('swimmer-name').value = swimmer.swimmer_name; document.getElementById('swimmer-age').value = swimmer.age; document.getElementById('parent-name').value = swimmer.parent_name; document.getElementById('parent-email').value = swimmer.parent_email; const formTitle = document.querySelector('#view-swimmers h2'); formTitle.textContent = 'Edit Swimmer'; const submitBtn = document.getElementById('btn-add-swimmer'); submitBtn.textContent = '💾 Update Swimmer'; const form = document.getElementById('form-add-swimmer'); const cancelBtn = document.createElement('button'); cancelBtn.type = 'button'; cancelBtn.className = 'md:col-span-2 w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-4 rounded-xl transition-all'; cancelBtn.textContent = 'Cancel Edit'; cancelBtn.onclick = () => { form.reset(); formTitle.textContent = 'Add New Swimmer'; submitBtn.textContent = '🏊‍♂️ Add Swimmer'; cancelBtn.remove(); delete form.dataset.editId; }; if (!document.querySelector('#form-add-swimmer button[type="button"]')) { form.appendChild(cancelBtn); } form.dataset.editId = backendId; document.querySelector('#view-swimmers').scrollIntoView({ behavior: 'smooth' }); } function showMessage(message, type = 'error') { const messageDiv = document.createElement('div'); const bgColor = type === 'success' ? 'bg-green-500' : 'bg-red-500'; messageDiv.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50`; messageDiv.textContent = message; document.body.appendChild(messageDiv); setTimeout(() => { messageDiv.remove(); }, 3000); } window.deleteRecord = deleteRecord; window.editSwimmer = editSwimmer;
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .glass-effect-dark {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+      border-left: 4px solid #06b6d4;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #06b6d4;
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+    }
+
+    .admin-badge {
+      background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .water-bg {
+      background: 
+        linear-gradient(135deg, rgba(6, 182, 212, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%),
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.05) 35px, rgba(255,255,255,0.05) 70px);
+      animation: wave 20s linear infinite;
+      background-size: 200% 200%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .water-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+      animation: waterFlow 15s ease-in-out infinite;
+    }
+
+    @keyframes waterFlow {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -20px) scale(1.1); }
+      66% { transform: translate(-20px, 30px) scale(0.9); }
+    }
+
+    .pool-lanes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 80px,
+        rgba(255, 255, 255, 0.1) 80px,
+        rgba(255, 255, 255, 0.1) 82px
+      );
+      animation: laneScroll 20s linear infinite;
+    }
+
+    @keyframes laneScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(82px); }
+    }
+
+    .water-ripples {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 10% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+      animation: rippleMove 10s ease-in-out infinite;
+    }
+
+    @keyframes rippleMove {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
+    }
+
+    .shark-logo {
+      filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.5));
+    }
+
+    .ripple {
+      animation: ripple 1.5s ease-out;
+    }
+
+    @keyframes ripple {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    .hero-image {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full">
+  <div id="app" class="h-full w-full overflow-auto" style="background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #0f172a 100%);">
+   <div class="min-h-full"><!-- PUBLIC LANDING PAGE -->
+    <div id="landing-page" class="min-h-full"><!-- Hero Section with Navigation -->
+     <div class="relative overflow-hidden water-bg min-h-screen flex flex-col">
+      <div class="pool-lanes"></div>
+      <div class="water-ripples"></div><!-- Top Navigation -->
+      <nav class="glass-effect-dark shadow-lg relative z-10">
+       <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+         <div class="flex items-center gap-4"><img src="https://i.imgur.com/lOlw81t.jpeg" alt="Tigersharks Logo" class="w-16 h-16 object-contain shark-logo" onerror="this.style.display='none';">
+          <div>
+           <h1 id="nav-team-name" class="text-2xl font-black text-white">Tigersharks Swim Team</h1>
+           <p class="text-sm text-cyan-300 font-semibold">Excellence in Every Stroke</p>
+          </div>
+         </div>
+         <div class="flex gap-3"><button id="btn-parent-portal" class="px-6 py-3 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold rounded-xl transition-all shadow-lg transform hover:scale-105"> 👨‍👩‍👧 Parent Portal </button> <button id="btn-admin-login" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold rounded-xl transition-all shadow-lg transform hover:scale-105"> 🔐 Admin Login </button>
+         </div>
+        </div>
+       </div>
+      </nav><!-- Hero Content -->
+      <div class="flex-1 flex items-center relative z-10">
+       <div class="max-w-7xl mx-auto px-6 py-16 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"><!-- Left: Text Content -->
+         <div class="text-center lg:text-left slide-in">
+          <div class="mb-8 float"><img src="https://i.imgur.com/lOlw81t.jpeg" alt="Tigersharks Logo" class="w-64 h-64 mx-auto lg:mx-0 object-contain shark-logo" onerror="this.style.display='none';">
+          </div>
+          <h2 id="hero-team-name" class="text-6xl font-black text-white mb-6" style="text-shadow: 0 0 30px rgba(6, 182, 212, 0.5);">Tigersharks Swim Team</h2>
+          <p id="hero-tagline" class="text-2xl text-cyan-100 mb-8 font-semibold">Building Champions in and Out of the Pool</p>
+          <p id="hero-description" class="text-lg text-white opacity-90 mb-8 leading-relaxed">Join our competitive swim team where dedication meets excellence. Under the guidance of experienced coaches, our swimmers develop technique, strength, and character that lasts a lifetime.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"><button id="btn-view-schedule" class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold text-lg rounded-xl transition-all shadow-xl transform hover:scale-105"> 📅 View Training Schedule </button> <button id="btn-scroll-info" class="px-8 py-4 bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold text-lg rounded-xl transition-all border-2 border-white transform hover:scale-105"> ℹ️ Learn More </button>
+          </div>
+         </div><!-- Right: Image Grid -->
+         <div class="grid grid-cols-2 gap-4 zoom-in">
+          <div class="col-span-2 rounded-2xl overflow-hidden shadow-2xl border-4 border-white border-opacity-20"><img src="https://i.imgur.com/BjU80NX.jpeg" alt="Tigersharks Team Photo" class="hero-image h-64" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-cyan-500 to-blue-600 h-64 flex items-center justify-center text-white text-4xl\'>🏊‍♂️</div>';">
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white border-opacity-20"><img src="https://i.imgur.com/gHKckfh.jpeg" alt="Team Training" class="hero-image h-48" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-blue-500 to-purple-600 h-48 flex items-center justify-center text-white text-4xl\'>⏱️</div>';">
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white border-opacity-20"><img src="https://i.imgur.com/pu45aC7.jpeg" alt="Swimming Action" class="hero-image h-48" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-purple-500 to-pink-600 h-48 flex items-center justify-center text-white text-4xl\'>🏆</div>';">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Team Information Section -->
+     <div id="team-info-section" class="py-16 bg-gradient-to-b from-slate-900 to-slate-800">
+      <div class="max-w-7xl mx-auto px-6"><!-- Team News Section -->
+       <div class="glass-effect-dark rounded-3xl p-12 mb-12 fade-in">
+        <div class="text-center mb-8">
+         <div class="text-6xl mb-4">
+          📰
+         </div>
+         <h3 class="text-4xl font-black text-white mb-3">Team News &amp; Updates</h3>
+         <p class="text-cyan-300 text-xl">Stay informed with the latest team announcements</p>
+        </div>
+        <div id="landing-news-list" class="space-y-6">
+         <p class="text-white text-center py-8 opacity-70">No news available at this time.</p>
+        </div>
+       </div><!-- Coach Section -->
+       <div class="glass-effect-dark rounded-3xl p-12 mb-12 fade-in">
+        <div class="text-center mb-8">
+         <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cyan-400 shadow-2xl"><img src="https://i.imgur.com/fYMDe53.jpeg" alt="Coach Hamidoo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-cyan-500 to-blue-600 w-full h-full flex items-center justify-center text-white text-6xl\'>👨‍🏫</div>';">
+         </div>
+         <h3 id="coach-section-name" class="text-4xl font-black text-white mb-3">Meet Coach Hamidoo</h3>
+         <p class="text-cyan-300 text-xl">Head Coach &amp; Team Director</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+         <div class="text-center p-6 glass-effect rounded-2xl">
+          <div class="text-4xl mb-3">
+           🎯
+          </div>
+          <h4 class="text-xl font-bold text-gray-800 mb-3">Our Vision</h4>
+          <p class="text-gray-700 leading-relaxed">Building champions in and out of the pool. Every stroke brings us closer to excellence.</p>
+         </div>
+         <div class="text-center p-6 glass-effect rounded-2xl">
+          <div class="text-4xl mb-3">
+           🏅
+          </div>
+          <h4 class="text-xl font-bold text-gray-800 mb-3">Our Values</h4>
+          <p class="text-gray-700 leading-relaxed">Discipline, teamwork, perseverance, and sportsmanship guide everything we do.</p>
+         </div>
+         <div class="text-center p-6 glass-effect rounded-2xl">
+          <div class="text-4xl mb-3">
+           💪
+          </div>
+          <h4 class="text-xl font-bold text-gray-800 mb-3">Our Promise</h4>
+          <p class="text-gray-700 leading-relaxed">Personalized coaching to help every swimmer reach their full potential.</p>
+         </div>
+        </div>
+       </div><!-- Training Schedule -->
+       <div class="glass-effect-dark rounded-3xl p-12 mb-12 fade-in">
+        <div class="text-center mb-8">
+         <div class="text-6xl mb-4">
+          📅
+         </div>
+         <h3 class="text-4xl font-black text-white mb-3">Training Schedule</h3>
+         <p class="text-cyan-300 text-xl">Consistent practice makes perfect swimmers</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+         <div class="glass-effect rounded-2xl p-8 border-l-4 border-cyan-500">
+          <h4 class="text-2xl font-bold text-gray-800 mb-4">Weekday Sessions</h4>
+          <p id="schedule-weekday" class="text-gray-700 text-xl font-semibold mb-2">Mon &amp; Wed: 6:30 AM - 7:20 AM</p>
+          <p class="text-gray-600">Technique-focused morning sessions</p>
+         </div>
+         <div class="glass-effect rounded-2xl p-8 border-l-4 border-blue-500">
+          <h4 class="text-2xl font-bold text-gray-800 mb-4">Extended Training</h4>
+          <p id="schedule-weekend" class="text-gray-700 text-xl font-semibold mb-2">Sun, Tue &amp; Thu: 2:30 PM - 4:30 PM</p>
+          <p class="text-gray-600">Dryland training + Swimming practice</p>
+         </div>
+        </div>
+        <div class="mt-8 text-center p-6 bg-cyan-500 bg-opacity-20 rounded-2xl border-2 border-cyan-400">
+         <p class="text-white text-lg"><span class="text-2xl mr-2">📍</span> <strong>Location:</strong> <span id="schedule-location" class="font-bold text-cyan-200">BISR Al-Waha Campus</span></p>
+        </div>
+       </div><!-- What We Offer -->
+       <div class="glass-effect-dark rounded-3xl p-12 fade-in">
+        <div class="text-center mb-12">
+         <div class="text-6xl mb-4">
+          🏊‍♂️
+         </div>
+         <h3 class="text-4xl font-black text-white mb-3">What We Offer</h3>
+         <p class="text-cyan-300 text-xl">Comprehensive training for all skill levels</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+         <div class="glass-effect rounded-2xl p-6 text-center hover:shadow-2xl transition-all transform hover:scale-105">
+          <div class="text-5xl mb-4">
+           🏊‍♂️
+          </div>
+          <h4 class="text-lg font-bold text-gray-800 mb-2">Expert Coaching</h4>
+          <p class="text-gray-600 text-sm">Professional guidance from certified coaches</p>
+         </div>
+         <div class="glass-effect rounded-2xl p-6 text-center hover:shadow-2xl transition-all transform hover:scale-105">
+          <div class="text-5xl mb-4">
+           📊
+          </div>
+          <h4 class="text-lg font-bold text-gray-800 mb-2">Performance Tracking</h4>
+          <p class="text-gray-600 text-sm">Monitor progress with detailed analytics</p>
+         </div>
+         <div class="glass-effect rounded-2xl p-6 text-center hover:shadow-2xl transition-all transform hover:scale-105">
+          <div class="text-5xl mb-4">
+           🏆
+          </div>
+          <h4 class="text-lg font-bold text-gray-800 mb-2">Competition Ready</h4>
+          <p class="text-gray-600 text-sm">Regular meets and championship preparation</p>
+         </div>
+         <div class="glass-effect rounded-2xl p-6 text-center hover:shadow-2xl transition-all transform hover:scale-105">
+          <div class="text-5xl mb-4">
+           👥
+          </div>
+          <h4 class="text-lg font-bold text-gray-800 mb-2">Team Culture</h4>
+          <p class="text-gray-600 text-sm">Supportive environment and lasting friendships</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- CTA Section -->
+     <div class="relative overflow-hidden water-bg py-20">
+      <div class="pool-lanes"></div>
+      <div class="water-ripples"></div>
+      <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+       <h3 class="text-5xl font-black text-white mb-6" style="text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);">Ready to Dive In?</h3>
+       <p class="text-xl text-cyan-100 mb-10 leading-relaxed">Access the Parent Portal to track your swimmer's progress, view upcoming meets, and stay connected with the team.</p><button id="btn-cta-parent-portal" class="px-12 py-5 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold text-2xl rounded-2xl transition-all shadow-2xl transform hover:scale-110"> 👨‍👩‍👧 Enter Parent Portal </button>
+      </div>
+     </div>
+    </div><!-- ADMIN LOGIN MODAL -->
+    <div id="admin-login-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4" style="background: rgba(0, 0, 0, 0.8);">
+     <div class="glass-effect-dark rounded-3xl shadow-2xl p-8 max-w-md w-full zoom-in">
+      <div class="text-center mb-6">
+       <div class="text-5xl mb-4">
+        🔐
+       </div>
+       <h2 class="text-3xl font-black text-white mb-2">Admin Login</h2>
+       <p class="text-gray-300">Enter your credentials to access the admin dashboard</p>
+      </div>
+      <form id="admin-login-form" class="space-y-4">
+       <div><label for="admin-password" class="block text-sm font-semibold text-cyan-300 mb-2">Admin Password</label> <input type="password" id="admin-password" required class="w-full px-4 py-3 border-2 border-cyan-500 bg-white bg-opacity-10 text-white rounded-xl transition-all placeholder-gray-400" placeholder="Enter admin password">
+       </div><button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105"> 🔓 Access Admin Dashboard </button> <button type="button" id="btn-cancel-login" class="w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 rounded-xl transition-all"> Cancel </button>
+      </form>
+     </div>
+    </div><!-- ADMIN DASHBOARD -->
+    <div id="admin-dashboard" class="hidden min-h-full"><!-- Top Navigation Bar -->
+     <nav class="glass-effect shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+       <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4"><img src="https://i.imgur.com/lOlw81t.jpeg" alt="Tigersharks Logo" class="w-16 h-16 object-contain shark-logo" onerror="this.style.display='none';">
+         <div>
+          <h1 id="team-name" class="text-2xl font-black text-gray-800">Tigersharks Swim Team</h1>
+          <p id="coach-name" class="text-sm text-cyan-600 font-semibold">Coach Hamidoo - Head Coach</p>
+         </div>
+        </div>
+        <div class="flex items-center gap-4"><span class="admin-badge text-white text-xs font-bold px-3 py-1 rounded-full">ADMIN</span> <button id="admin-logout-btn" class="text-gray-600 hover:text-gray-800 font-semibold text-sm">Logout</button>
+        </div>
+       </div>
+      </div>
+     </nav><!-- Welcome Banner with Coach Message -->
+     <div class="relative overflow-hidden water-bg">
+      <div class="pool-lanes"></div>
+      <div class="water-ripples"></div>
+      <div class="max-w-7xl mx-auto px-6 py-12 relative z-10">
+       <div class="text-center mb-8 slide-in">
+        <h2 class="text-5xl font-black text-white mb-4" style="text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);">Welcome Back, Coach Hamidoo! 🏊‍♂️</h2>
+        <p id="welcome-message" class="text-xl text-cyan-100 opacity-90 mb-6">Manage your team, track performance, and schedule meets.</p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="glass-effect-dark rounded-2xl p-6 border-2 border-cyan-500 zoom-in">
+         <div class="text-4xl mb-3 text-center">
+          🎯
+         </div>
+         <h3 class="text-xl font-bold text-cyan-300 mb-3 text-center">Our Vision</h3>
+         <p class="text-white text-sm leading-relaxed text-center">Building champions in and out of the pool. Every stroke brings us closer to excellence.</p>
+        </div>
+        <div class="glass-effect-dark rounded-2xl p-6 border-2 border-blue-500 zoom-in" style="animation-delay: 0.1s;">
+         <div class="text-4xl mb-3 text-center">
+          📅
+         </div>
+         <h3 class="text-xl font-bold text-blue-300 mb-3 text-center">Training Schedule</h3>
+         <div class="text-white text-sm space-y-1">
+          <p id="weekday-schedule" class="font-semibold">Mon &amp; Wed: 6:30 AM - 7:20 AM</p>
+          <p id="weekend-schedule" class="font-semibold">Sun, Tue &amp; Thu: 2:30 PM - 4:30 PM (Dryland &amp; Swimming)</p>
+          <p id="training-location" class="text-cyan-300 text-xs mt-2">📍 BISR Al-Waha Campus</p>
+         </div>
+        </div>
+        <div class="glass-effect-dark rounded-2xl p-6 border-2 border-purple-500 zoom-in" style="animation-delay: 0.2s;">
+         <div class="text-4xl mb-3 text-center">
+          💪
+         </div>
+         <h3 class="text-xl font-bold text-purple-300 mb-3 text-center">Coach's Message</h3>
+         <p class="text-white text-sm italic leading-relaxed text-center">"Champions are made when nobody is watching. Your dedication today shapes your victories tomorrow!"</p>
+         <p class="text-cyan-300 text-xs mt-3 text-center font-semibold">- Coach Hamidoo</p>
+        </div>
+       </div>
+      </div>
+     </div><!-- Statistics Cards -->
+     <div class="max-w-7xl mx-auto px-6 -mt-8 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+       <div class="glass-effect rounded-2xl p-6 shadow-xl fade-in border-l-4 border-cyan-500">
+        <div class="flex items-center justify-between">
+         <div>
+          <p class="text-gray-600 text-sm font-semibold uppercase">Total Swimmers</p>
+          <p id="stat-swimmers" class="text-4xl font-bold text-gray-800 mt-2">0</p>
+         </div>
+         <div class="text-5xl">
+          🏊‍♂️
+         </div>
+        </div>
+       </div>
+       <div class="glass-effect rounded-2xl p-6 shadow-xl fade-in border-l-4 border-blue-500" style="animation-delay: 0.1s;">
+        <div class="flex items-center justify-between">
+         <div>
+          <p class="text-gray-600 text-sm font-semibold uppercase">Times Recorded</p>
+          <p id="stat-times" class="text-4xl font-bold text-gray-800 mt-2">0</p>
+         </div>
+         <div class="text-5xl">
+          ⏱️
+         </div>
+        </div>
+       </div>
+       <div class="glass-effect rounded-2xl p-6 shadow-xl fade-in border-l-4 border-purple-500" style="animation-delay: 0.2s;">
+        <div class="flex items-center justify-between">
+         <div>
+          <p class="text-gray-600 text-sm font-semibold uppercase">Upcoming Meets</p>
+          <p id="stat-meets" class="text-4xl font-bold text-gray-800 mt-2">0</p>
+         </div>
+         <div class="text-5xl">
+          📅
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Navigation Tabs -->
+     <div class="max-w-7xl mx-auto px-6 mb-8">
+      <div class="glass-effect rounded-2xl p-2 flex gap-2 shadow-lg"><button id="tab-swimmers" class="flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md transform hover:scale-105"> 🏊‍♂️ Swimmers </button> <button id="tab-times" class="flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all text-gray-700 hover:bg-gray-100 transform hover:scale-105"> ⏱️ Times </button> <button id="tab-meets" class="flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all text-gray-700 hover:bg-gray-100 transform hover:scale-105"> 📅 Meets </button> <button id="tab-news" class="flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all text-gray-700 hover:bg-gray-100 transform hover:scale-105"> 📰 News </button> <button id="tab-settings" class="flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all text-gray-700 hover:bg-gray-100 transform hover:scale-105"> ⚙️ Settings </button>
+      </div>
+     </div><!-- Main Content Container -->
+     <main class="max-w-7xl mx-auto px-6 pb-12"><!-- Swimmers View -->
+      <div id="view-swimmers" class="space-y-6">
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          ➕
+         </div>
+         <h2 class="text-2xl font-bold text-gray-800">Add New Swimmer</h2>
+        </div>
+        <form id="form-add-swimmer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+         <div><label for="swimmer-name" class="block text-sm font-bold text-gray-700 mb-2">Swimmer Name *</label> <input type="text" id="swimmer-name" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Enter swimmer name">
+         </div>
+         <div><label for="swimmer-age" class="block text-sm font-bold text-gray-700 mb-2">Age *</label> <input type="number" id="swimmer-age" required min="5" max="18" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Enter age">
+         </div>
+         <div><label for="parent-name" class="block text-sm font-bold text-gray-700 mb-2">Parent Name *</label> <input type="text" id="parent-name" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Enter parent name">
+         </div>
+         <div class="md:col-span-2"><label for="parent-email" class="block text-sm font-bold text-gray-700 mb-2">Parent Email *</label> <input type="email" id="parent-email" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="parent@example.com">
+         </div>
+         <div class="md:col-span-2"><button type="submit" id="btn-add-swimmer" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105"> 🏊‍♂️ Add Swimmer </button>
+         </div>
+        </form>
+       </div>
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          👥
+         </div>
+         <h2 class="text-2xl font-bold text-gray-800">Team Roster</h2>
+        </div>
+        <div id="swimmers-list" class="space-y-4">
+         <p class="text-gray-500 text-center py-12 text-lg">No swimmers added yet. Add your first swimmer above!</p>
+        </div>
+       </div>
+      </div><!-- Times View -->
+      <div id="view-times" class="space-y-6 hidden">
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          ⏱️
+         </div>
+         <h2 class="text-2xl font-bold text-gray-800">Record New Time</h2>
+        </div>
+        <form id="form-add-time" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+         <div><label for="time-swimmer" class="block text-sm font-bold text-gray-700 mb-2">Swimmer *</label> <select id="time-swimmer" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all"> <option value="">Select swimmer</option> </select>
+         </div>
+         <div><label for="event-name" class="block text-sm font-bold text-gray-700 mb-2">Event *</label> <select id="event-name" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all"> <option value="">Select event</option> <option value="50m Freestyle">50m Freestyle</option> <option value="100m Freestyle">100m Freestyle</option> <option value="50m Backstroke">50m Backstroke</option> <option value="100m Backstroke">100m Backstroke</option> <option value="50m Breaststroke">50m Breaststroke</option> <option value="100m Breaststroke">100m Breaststroke</option> <option value="50m Butterfly">50m Butterfly</option> <option value="100m Butterfly">100m Butterfly</option> <option value="200m IM">200m IM</option> </select>
+         </div>
+         <div><label for="time-value" class="block text-sm font-bold text-gray-700 mb-2">Time (mm:ss.ms) *</label> <input type="text" id="time-value" required pattern="[0-9]{1,2}:[0-5][0-9]\.[0-9]{2}" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="01:23.45">
+         </div>
+         <div><label for="time-date" class="block text-sm font-bold text-gray-700 mb-2">Date *</label> <input type="date" id="time-date" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all">
+         </div>
+         <div class="md:col-span-2"><label for="time-meet-name" class="block text-sm font-bold text-gray-700 mb-2">Meet Name (Optional)</label> <input type="text" id="time-meet-name" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="e.g., County Championship, Practice Time Trial">
+         </div>
+         <div class="md:col-span-2"><button type="submit" id="btn-add-time" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105"> ⏱️ Record Time </button>
+         </div>
+        </form>
+       </div>
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          📊
+         </div>
+         <h2 class="text-2xl font-bold text-gray-800">Recorded Times</h2>
+        </div>
+        <div id="times-list" class="space-y-4">
+         <p class="text-gray-500 text-center py-12 text-lg">No times recorded yet. Add times using the form above!</p>
+        </div>
+       </div>
+      </div><!-- Meets View -->
+      <div id="view-meets" class="space-y-6 hidden">
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          📅
+         </div>
+         <h2 class="text-2xl font-bold text-gray-800">Add Upcoming Meet</h2>
+        </div>
+        <form id="form-add-meet" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+         <div class="md:col-span-2"><label for="meet-name" class="block text-sm font-bold text-gray-700 mb-2">Meet Name *</label> <input type="text" id="meet-name" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Enter meet name">
+         </div>
+         <div><label for="meet-date" class="block text-sm font-bold text-gray-700 mb-2">Date *</label> <input type="date" id="meet-date" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all">
+         </div>
+         <div><label for="meet-location" class="block text-sm font-bold text-gray-700 mb-2">Location *</label> <input type="text" id="meet-location" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Enter location">
+         </div>
+         <div class="md:col-span-2"><label for="meet-notes" class="block text-sm font-bold text-gray-700 mb-2">Notes</label> <textarea id="meet-notes" rows="3" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Important information for parents"></textarea>
+         </div>
+         <div class="md:col-span-2"><button type="submit" id="btn-add-meet" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105"> 📅 Add Meet </button>
+         </div>
+        </form>
+       </div>
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          🗓️
+         </div>
+         <h2 class="text-2xl font-bold text-gray-800">Upcoming Meets</h2>
+        </div>
+        <div id="meets-list" class="space-y-4">
+         <p class="text-gray-500 text-center py-12 text-lg">No upcoming meets scheduled. Add meets using the form above!</p>
+        </div>
+       </div>
+      </div><!-- News View -->
+      <div id="view-news" class="space-y-6 hidden">
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          📢
+         </div>
+         <h2 class="text-2xl font-bold text-gray-800">Team News Feed</h2>
+         <p class="text-sm text-gray-600 ml-auto">Use the Data button above to post news</p>
+        </div>
+        <div id="news-list" class="space-y-4">
+         <p class="text-gray-500 text-center py-12 text-lg">No news posted yet. Use the Data button above to add team news!</p>
+        </div>
+       </div>
+      </div><!-- Settings View -->
+      <div id="view-settings" class="space-y-6 hidden">
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          ⚙️
+         </div>
+         <h2 class="text-2xl font-bold text-gray-800">Team Settings</h2>
+        </div>
+        <form id="form-settings" class="space-y-6">
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div><label for="settings-team-name" class="block text-sm font-bold text-gray-700 mb-2">Team Name</label> <input type="text" id="settings-team-name" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Team name">
+          </div>
+          <div><label for="settings-coach-name" class="block text-sm font-bold text-gray-700 mb-2">Coach Name</label> <input type="text" id="settings-coach-name" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Coach name">
+          </div>
+         </div>
+         <div><label for="settings-tagline" class="block text-sm font-bold text-gray-700 mb-2">Team Tagline</label> <input type="text" id="settings-tagline" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Team tagline">
+         </div>
+         <div><label for="settings-description" class="block text-sm font-bold text-gray-700 mb-2">Team Description</label> <textarea id="settings-description" rows="3" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Team description"></textarea>
+         </div>
+         <div class="border-t-2 border-gray-200 pt-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Training Schedule</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+           <div><label for="settings-weekday" class="block text-sm font-bold text-gray-700 mb-2">Weekday Schedule</label> <input type="text" id="settings-weekday" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Mon &amp; Wed: 6:30 AM - 7:20 AM">
+           </div>
+           <div><label for="settings-weekend" class="block text-sm font-bold text-gray-700 mb-2">Extended Training</label> <input type="text" id="settings-weekend" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Sun, Tue &amp; Thu: 2:30 PM - 4:30 PM">
+           </div>
+          </div>
+          <div class="mt-4"><label for="settings-location" class="block text-sm font-bold text-gray-700 mb-2">Training Location</label> <input type="text" id="settings-location" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="BISR Al-Waha Campus">
+          </div>
+         </div>
+         <div class="border-t-2 border-gray-200 pt-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Admin Password</h3>
+          <div><label for="settings-password" class="block text-sm font-bold text-gray-700 mb-2">Change Admin Password</label> <input type="password" id="settings-password" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all" placeholder="Enter new password">
+           <p class="text-sm text-gray-500 mt-2">Leave blank to keep current password</p>
+          </div>
+         </div>
+         <div><button type="submit" id="btn-save-settings" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105"> 💾 Save Settings </button>
+         </div>
+        </form>
+       </div>
+      </div>
+     </main>
+    </div><!-- PARENT PORTAL VIEW -->
+    <div id="parent-portal-view" class="hidden min-h-full"><!-- Top Navigation Bar -->
+     <nav class="glass-effect shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+       <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4"><img src="https://i.imgur.com/lOlw81t.jpeg" alt="Tigersharks Logo" class="w-16 h-16 object-contain shark-logo" onerror="this.style.display='none';">
+         <div>
+          <h1 id="parent-team-name" class="text-2xl font-black text-gray-800">Tigersharks Swim Team</h1>
+          <p class="text-sm text-green-600 font-semibold">👨‍👩‍👧 Parent Portal</p>
+         </div>
+        </div><button id="parent-back-btn" class="px-6 py-2 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-xl transition-all"> ← Back to Home </button>
+       </div>
+      </div>
+     </nav>
+     <div class="max-w-7xl mx-auto px-6 py-12">
+      <div class="glass-effect rounded-2xl shadow-xl p-8 mb-8">
+       <div class="flex items-center gap-3 mb-6">
+        <div class="text-3xl">
+         👨‍👩‍👧
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800">Parent Portal - View Your Child's Progress</h2>
+       </div>
+       <div class="mb-6"><label for="parent-swimmer-select" class="block text-sm font-bold text-gray-700 mb-2">Select Your Swimmer</label> <select id="parent-swimmer-select" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl transition-all"> <option value="">Choose your child...</option> </select>
+       </div>
+      </div>
+      <div id="parent-portal-content" class="hidden space-y-6"><!-- Swimmer Stats -->
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+  <div class="avatar-ring">
+    <img
+      id="parent-avatar"
+      src="https://i.imgur.com/pu45aC7.jpeg"
+      class="w-16 h-16 rounded-full object-cover floaty-avatar bg-slate-800"
+      alt="Swimmer"
+      onerror="this.style.display='none';"
+    />
+  </div>
+
+  <div>
+    <h3 class="text-2xl font-bold text-gray-800" id="parent-swimmer-name">Swimmer Performance</h3>
+    <p class="text-sm text-gray-600 font-semibold" id="parent-avatar-subtitle">Progress & Personal Bests</p>
+  </div>
+</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+         <div class="stat-card p-6 rounded-xl">
+          <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Total Swims</p>
+          <p id="parent-stat-swims" class="text-4xl font-bold text-blue-600">0</p>
+         </div>
+         <div class="stat-card p-6 rounded-xl">
+          <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Personal Records</p>
+          <p id="parent-stat-prs" class="text-4xl font-bold text-green-600">0</p>
+         </div>
+         <div class="stat-card p-6 rounded-xl">
+          <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Events Competed</p>
+          <p id="parent-stat-events" class="text-4xl font-bold text-purple-600">0</p>
+         </div>
+        </div>
+       </div><!-- Progression Chart -->
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          📈
+         </div>
+         <h3 class="text-2xl font-bold text-gray-800">Swim Time Progression</h3>
+        </div>
+        <div id="parent-progression-chart" class="min-h-96"></div>
+       </div><!-- Times by Event -->
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          📊
+         </div>
+         <h3 class="text-2xl font-bold text-gray-800">Performance by Event</h3>
+        </div>
+        <div id="parent-event-breakdown" class="space-y-6"></div>
+       </div><!-- Upcoming Meets -->
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          📅
+         </div>
+         <h3 class="text-2xl font-bold text-gray-800">Upcoming Meets</h3>
+        </div>
+        <div id="parent-meets-list" class="space-y-4"></div>
+       </div><!-- Team News -->
+       <div class="glass-effect rounded-2xl shadow-xl p-8">
+        <div class="flex items-center gap-3 mb-6">
+         <div class="text-3xl">
+          📰
+         </div>
+         <h3 class="text-2xl font-bold text-gray-800">Team News &amp; Updates</h3>
+        </div>
+        <div id="parent-news-list" class="space-y-4"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+      const SUPABASE_URL = "PASTE_YOUR_PROJECT_URL";
+  const SUPABASE_ANON_KEY = "PASTE_YOUR_ANON_KEY";
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+</script>
+const defaultConfig = {
+      team_name: "Tigersharks Swim Team",
+      coach_name: "Coach Hamidoo",
+      welcome_message: "Manage your team, track performance, and schedule meets.",
+      hero_tagline: "Building Champions in and Out of the Pool",
+      hero_description: "Join our competitive swim team where dedication meets excellence. Under the guidance of experienced coaches, our swimmers develop technique, strength, and character that lasts a lifetime.",
+      weekday_schedule: "Mon & Wed: 6:30 AM - 7:20 AM",
+      weekend_schedule: "Sun, Tue & Thu: 2:30 PM - 4:30 PM (Dryland & Swimming)",
+      training_location: "BISR Al-Waha Campus",
+      admin_password: "swim2024",
+      background_color: "#0f172a",
+      surface_color: "#ffffff",
+      text_color: "#1f2937",
+      primary_action_color: "#2563eb",
+      secondary_action_color: "#764ba2",
+      font_family: "Inter",
+      font_size: 16
+    };
+
+    let allData = [];
+    let currentView = 'landing';
+    let adminView = 'swimmers';
+    let recordCount = 0;
+    let isAuthenticated = false;
+// ✅ Local storage fallback (works on Vercel)
+const STORAGE_KEY = "tigersharks_records_v1";
+
+function loadLocalData() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveLocalData(data) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function triggerDataChanged() {
+  dataHandler.onDataChanged(allData);
+}
+
+// Wrap SDK calls so the site works with or without /_sdk
+async function createRecord(record) {
+  // If builder SDK exists, use it
+  if (window.dataSdk && window.dataSdk.create) {
+    return await window.dataSdk.create(record);
+  }
+
+  // Otherwise save locally
+  record.__backendId = record.id; // so your edit/delete works
+  allData.push(record);
+  saveLocalData(allData);
+  triggerDataChanged();
+  return { isOk: true };
+}
+
+async function updateRecord(record) {
+  if (window.dataSdk && window.dataSdk.update) {
+    return await window.dataSdk.update(record);
+  }
+
+  const idx = allData.findIndex(r => r.__backendId === record.__backendId);
+  if (idx !== -1) allData[idx] = record;
+  saveLocalData(allData);
+  triggerDataChanged();
+  return { isOk: true };
+}
+
+async function deleteRecordLocal(record) {
+  if (window.dataSdk && window.dataSdk.delete) {
+    return await window.dataSdk.delete(record);
+  }
+
+  allData = allData.filter(r => r.__backendId !== record.__backendId);
+  saveLocalData(allData);
+  triggerDataChanged();
+  return { isOk: true };
+}
+
+    const dataHandler = {
+      onDataChanged(data) {
+        allData = data;
+        recordCount = data.length;
+        updateStatistics();
+        renderAdminView();
+        updateSwimmerDropdown();
+        updateParentPortalDropdown();
+      }
+    };
+
+    async function onConfigChange(config) {
+      const teamName = config.team_name || defaultConfig.team_name;
+      const coachName = config.coach_name || defaultConfig.coach_name;
+      const welcomeMessage = config.welcome_message || defaultConfig.welcome_message;
+      const heroTagline = config.hero_tagline || defaultConfig.hero_tagline;
+      const heroDescription = config.hero_description || defaultConfig.hero_description;
+      const weekdaySchedule = config.weekday_schedule || defaultConfig.weekday_schedule;
+      const weekendSchedule = config.weekend_schedule || defaultConfig.weekend_schedule;
+      const trainingLocation = config.training_location || defaultConfig.training_location;
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const fontSize = config.font_size || defaultConfig.font_size;
+
+      // Update landing page
+      const navTeamName = document.getElementById('nav-team-name');
+      const heroTeamName = document.getElementById('hero-team-name');
+      const heroTaglineEl = document.getElementById('hero-tagline');
+      const heroDescriptionEl = document.getElementById('hero-description');
+      const coachSectionName = document.getElementById('coach-section-name');
+      const scheduleWeekday = document.getElementById('schedule-weekday');
+      const scheduleWeekend = document.getElementById('schedule-weekend');
+      const scheduleLocation = document.getElementById('schedule-location');
+
+      if (navTeamName) {
+        navTeamName.textContent = teamName;
+        navTeamName.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+      }
+      
+      if (heroTeamName) {
+        heroTeamName.textContent = teamName;
+        heroTeamName.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+      }
+
+      if (heroTaglineEl) {
+        heroTaglineEl.textContent = heroTagline;
+        heroTaglineEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+      }
+
+      if (heroDescriptionEl) {
+        heroDescriptionEl.textContent = heroDescription;
+        heroDescriptionEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+      }
+
+      if (coachSectionName) {
+        coachSectionName.textContent = `Meet ${coachName}`;
+        coachSectionName.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+      }
+
+      if (scheduleWeekday) {
+        scheduleWeekday.textContent = weekdaySchedule;
+        scheduleWeekday.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+      }
+
+      if (scheduleWeekend) {
+        scheduleWeekend.textContent = weekendSchedule;
+        scheduleWeekend.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+      }
+
+      if (scheduleLocation) {
+        scheduleLocation.textContent = trainingLocation;
+        scheduleLocation.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+      }
+
+      // Update admin dashboard
+      const teamNameEl = document.getElementById('team-name');
+      const coachNameEl = document.getElementById('coach-name');
+      const welcomeMessageEl = document.getElementById('welcome-message');
+      const weekdayEl = document.getElementById('weekday-schedule');
+      const weekendEl = document.getElementById('weekend-schedule');
+      const locationEl = document.getElementById('training-location');
+      
+      if (teamNameEl) {
+        teamNameEl.textContent = teamName;
+        teamNameEl.style.color = textColor;
+        teamNameEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+        teamNameEl.style.fontSize = `${fontSize * 1.5}px`;
+      }
+      
+      if (coachNameEl) {
+        coachNameEl.textContent = `${coachName} - Head Coach`;
+        coachNameEl.style.color = textColor;
+        coachNameEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+        coachNameEl.style.fontSize = `${fontSize * 0.875}px`;
+      }
+      
+      if (welcomeMessageEl) {
+        welcomeMessageEl.textContent = welcomeMessage;
+        welcomeMessageEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+        welcomeMessageEl.style.fontSize = `${fontSize * 1.25}px`;
+      }
+
+      if (weekdayEl) {
+        weekdayEl.textContent = weekdaySchedule;
+        weekdayEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+        weekdayEl.style.fontSize = `${fontSize * 0.875}px`;
+      }
+
+      if (weekendEl) {
+        weekendEl.textContent = weekendSchedule;
+        weekendEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+        weekendEl.style.fontSize = `${fontSize * 0.875}px`;
+      }
+
+      if (locationEl) {
+        locationEl.textContent = `📍 ${trainingLocation}`;
+        locationEl.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+        locationEl.style.fontSize = `${fontSize * 0.75}px`;
+      }
+
+      // Update parent portal
+      const parentTeamName = document.getElementById('parent-team-name');
+      if (parentTeamName) {
+        parentTeamName.textContent = teamName;
+        parentTeamName.style.color = textColor;
+        parentTeamName.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+      }
+
+      document.getElementById('app').style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${secondaryActionColor} 100%)`;
+
+      const buttons = document.querySelectorAll('button[type="submit"]');
+      buttons.forEach(btn => {
+        btn.style.background = `linear-gradient(to right, ${primaryActionColor}, ${secondaryActionColor})`;
+        btn.style.fontFamily = `${fontFamily}, Inter, system-ui, sans-serif`;
+        btn.style.fontSize = `${fontSize}px`;
+      });
+    }
+
+    // Initialize SDKs
+    (async () => {
+      // If you're running this on the original builder host, dataSdk exists.
+      // On Vercel/Netlify, dataSdk usually doesn't exist, so we fall back to localStorage.
+      if (window.dataSdk && window.dataSdk.init) {
+        const initResult = await window.dataSdk.init(dataHandler);
+        if (!initResult.isOk) {
+          console.error("Failed to initialize data SDK");
+        }
+      } else {
+        // Local fallback (so Add Swimmer / Record Time works on your own hosting)
+        allData = loadLocalData().map(r => ({ ...r, __backendId: r.__backendId || r.id }));
+        recordCount = allData.length;
+        triggerDataChanged();
+      }
+
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities: (config) => ({
+            recolorables: [
+              {
+                get: () => config.background_color || defaultConfig.background_color,
+                set: (value) => {
+                  config.background_color = value;
+                  window.elementSdk.setConfig({ background_color: value });
+                }
+              },
+              {
+                get: () => config.surface_color || defaultConfig.surface_color,
+                set: (value) => {
+                  config.surface_color = value;
+                  window.elementSdk.setConfig({ surface_color: value });
+                }
+              },
+              {
+                get: () => config.text_color || defaultConfig.text_color,
+                set: (value) => {
+                  config.text_color = value;
+                  window.elementSdk.setConfig({ text_color: value });
+                }
+              },
+              {
+                get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                set: (value) => {
+                  config.primary_action_color = value;
+                  window.elementSdk.setConfig({ primary_action_color: value });
+                }
+              },
+              {
+                get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                set: (value) => {
+                  config.secondary_action_color = value;
+                  window.elementSdk.setConfig({ secondary_action_color: value });
+                }
+              }
+            ],
+            borderables: [],
+            fontEditable: {
+              get: () => config.font_family || defaultConfig.font_family,
+              set: (value) => {
+                config.font_family = value;
+                window.elementSdk.setConfig({ font_family: value });
+              }
+            },
+            fontSizeable: {
+              get: () => config.font_size || defaultConfig.font_size,
+              set: (value) => {
+                config.font_size = value;
+                window.elementSdk.setConfig({ font_size: value });
+              }
+            }
+          }),
+          mapToEditPanelValues: (config) => new Map([
+            ["team_name", config.team_name || defaultConfig.team_name],
+            ["coach_name", config.coach_name || defaultConfig.coach_name],
+            ["welcome_message", config.welcome_message || defaultConfig.welcome_message],
+            ["hero_tagline", config.hero_tagline || defaultConfig.hero_tagline],
+            ["hero_description", config.hero_description || defaultConfig.hero_description],
+            ["weekday_schedule", config.weekday_schedule || defaultConfig.weekday_schedule],
+            ["weekend_schedule", config.weekend_schedule || defaultConfig.weekend_schedule],
+            ["training_location", config.training_location || defaultConfig.training_location],
+            ["admin_password", config.admin_password || defaultConfig.admin_password]
+          ])
+        });
+
+        await onConfigChange(window.elementSdk.config);
+      }
+    })();
+
+    // Navigation handlers
+    document.getElementById('btn-parent-portal').addEventListener('click', () => showView('parent-portal'));
+    document.getElementById('btn-cta-parent-portal').addEventListener('click', () => showView('parent-portal'));
+    document.getElementById('btn-admin-login').addEventListener('click', () => {
+      document.getElementById('admin-login-modal').classList.remove('hidden');
+    });
+    document.getElementById('btn-cancel-login').addEventListener('click', () => {
+      document.getElementById('admin-login-modal').classList.add('hidden');
+      document.getElementById('admin-password').value = '';
+    });
+    document.getElementById('parent-back-btn').addEventListener('click', () => showView('landing'));
+    document.getElementById('admin-logout-btn').addEventListener('click', () => {
+      isAuthenticated = false;
+      showView('landing');
+    });
+
+    document.getElementById('btn-view-schedule').addEventListener('click', () => {
+      document.getElementById('team-info-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('btn-scroll-info').addEventListener('click', () => {
+      document.getElementById('team-info-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Admin login form
+    document.getElementById('admin-login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const config = window.elementSdk ? window.elementSdk.config : defaultConfig;
+      const adminPassword = config.admin_password || defaultConfig.admin_password;
+      const enteredPassword = document.getElementById('admin-password').value;
+
+      if (enteredPassword === adminPassword) {
+        isAuthenticated = true;
+        document.getElementById('admin-login-modal').classList.add('hidden');
+        showView('admin');
+        document.getElementById('admin-password').value = '';
+      } else {
+        showMessage('Incorrect password. Please try again.');
+        document.getElementById('admin-password').value = '';
+      }
+    });
+
+    function showView(view) {
+      document.getElementById('landing-page').classList.toggle('hidden', view !== 'landing');
+      document.getElementById('admin-dashboard').classList.toggle('hidden', view !== 'admin');
+      document.getElementById('parent-portal-view').classList.toggle('hidden', view !== 'parent-portal');
+      
+      currentView = view;
+
+      if (view === 'parent-portal') {
+        updateParentPortalDropdown();
+      } else if (view === 'admin') {
+        switchAdminTab('swimmers');
+      }
+    }
+
+    // Admin tab navigation
+    document.getElementById('tab-swimmers').addEventListener('click', () => switchAdminTab('swimmers'));
+    document.getElementById('tab-times').addEventListener('click', () => switchAdminTab('times'));
+    document.getElementById('tab-meets').addEventListener('click', () => switchAdminTab('meets'));
+    document.getElementById('tab-news').addEventListener('click', () => switchAdminTab('news'));
+    document.getElementById('tab-settings').addEventListener('click', () => switchAdminTab('settings'));
+
+    function switchAdminTab(tab) {
+      adminView = tab;
+      
+      const tabs = ['swimmers', 'times', 'meets', 'news', 'settings'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-${t}`);
+        
+        if (t === tab) {
+          btn.style.background = 'linear-gradient(to right, #06b6d4, #2563eb)';
+          btn.classList.add('shadow-md', 'text-white');
+          btn.classList.remove('text-gray-700', 'hover:bg-gray-100');
+        } else {
+          btn.style.background = '';
+          btn.classList.remove('text-white', 'shadow-md');
+          btn.classList.add('text-gray-700', 'hover:bg-gray-100');
+        }
+      });
+
+      document.getElementById('view-swimmers').classList.toggle('hidden', tab !== 'swimmers');
+      document.getElementById('view-times').classList.toggle('hidden', tab !== 'times');
+      document.getElementById('view-meets').classList.toggle('hidden', tab !== 'meets');
+      document.getElementById('view-news').classList.toggle('hidden', tab !== 'news');
+      document.getElementById('view-settings').classList.toggle('hidden', tab !== 'settings');
+
+      if (tab === 'settings') {
+        loadSettingsForm();
+      }
+    }
+
+    function updateStatistics() {
+      const swimmers = allData.filter(d => d.type === 'swimmer');
+      const times = allData.filter(d => d.type === 'time');
+      const meets = allData.filter(d => d.type === 'meet');
+
+      document.getElementById('stat-swimmers').textContent = swimmers.length;
+      document.getElementById('stat-times').textContent = times.length;
+      document.getElementById('stat-meets').textContent = meets.length;
+    }
+
+    // Add swimmer form
+    document.getElementById('form-add-swimmer').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const form = e.target;
+      const editId = form.dataset.editId;
+      
+      if (!editId && recordCount >= 999) {
+        showMessage('Maximum limit of 999 records reached. Please delete some records first.');
+        return;
+      }
+
+      const btn = document.getElementById('btn-add-swimmer');
+      btn.disabled = true;
+      btn.textContent = editId ? 'Updating...' : 'Adding...';
+
+      if (editId) {
+        const existingSwimmer = allData.find(r => r.__backendId === editId);
+        if (existingSwimmer) {
+          existingSwimmer.swimmer_name = document.getElementById('swimmer-name').value;
+          existingSwimmer.age = parseInt(document.getElementById('swimmer-age').value);
+          existingSwimmer.parent_name = document.getElementById('parent-name').value;
+          existingSwimmer.parent_email = document.getElementById('parent-email').value;
+
+          const result = await updateRecord(existingSwimmer);
+          
+          btn.disabled = false;
+          btn.textContent = '🏊‍♂️ Add Swimmer';
+
+          if (result.isOk) {
+            form.reset();
+            delete form.dataset.editId;
+            document.querySelector('#view-swimmers h2').textContent = 'Add New Swimmer';
+            const cancelBtn = document.querySelector('#form-add-swimmer button[type="button"]');
+            if (cancelBtn) cancelBtn.remove();
+            showMessage('Swimmer updated successfully!', 'success');
+          } else {
+            showMessage('Failed to update swimmer. Please try again.');
+            btn.textContent = '💾 Update Swimmer';
+          }
+        }
+      } else {
+        const swimmer = {
+          id: Date.now().toString(),
+          type: 'swimmer',
+          swimmer_name: document.getElementById('swimmer-name').value,
+          age: parseInt(document.getElementById('swimmer-age').value),
+          parent_name: document.getElementById('parent-name').value,
+          parent_email: document.getElementById('parent-email').value,
+          created_at: new Date().toISOString()
+        };
+
+        const result = await createRecord(swimmer);
+        
+        btn.disabled = false;
+        btn.textContent = '🏊‍♂️ Add Swimmer';
+
+        if (result.isOk) {
+          e.target.reset();
+          showMessage('Swimmer added successfully!', 'success');
+        } else {
+          showMessage('Failed to add swimmer. Please try again.');
+        }
+      }
+    });
+
+    // Add time form
+    document.getElementById('form-add-time').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if (recordCount >= 999) {
+        showMessage('Maximum limit of 999 records reached. Please delete some records first.');
+        return;
+      }
+
+      const btn = document.getElementById('btn-add-time');
+      btn.disabled = true;
+      btn.textContent = 'Recording...';
+
+      const time = {
+        id: Date.now().toString(),
+        type: 'time',
+        swimmer_name: document.getElementById('time-swimmer').value,
+        event_name: document.getElementById('event-name').value,
+        time: document.getElementById('time-value').value,
+        date: document.getElementById('time-date').value,
+        meet_name: document.getElementById('time-meet-name').value || '',
+        created_at: new Date().toISOString()
+      };
+
+      const result = await createRecord(time);
+      
+      btn.disabled = false;
+      btn.textContent = '⏱️ Record Time';
+
+      if (result.isOk) {
+        e.target.reset();
+      } else {
+        showMessage('Failed to record time. Please try again.');
+      }
+    });
+
+    // Add meet form
+    document.getElementById('form-add-meet').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if (recordCount >= 999) {
+        showMessage('Maximum limit of 999 records reached. Please delete some records first.');
+        return;
+      }
+
+      const btn = document.getElementById('btn-add-meet');
+      btn.disabled = true;
+      btn.textContent = 'Adding...';
+
+      const meet = {
+        id: Date.now().toString(),
+        type: 'meet',
+        event_name: document.getElementById('meet-name').value,
+        date: document.getElementById('meet-date').value,
+        meet_location: document.getElementById('meet-location').value,
+        notes: document.getElementById('meet-notes').value || '',
+        created_at: new Date().toISOString()
+      };
+
+      const result = await createRecord(meet);
+      
+      btn.disabled = false;
+      btn.textContent = '📅 Add Meet';
+
+      if (result.isOk) {
+        e.target.reset();
+      } else {
+        showMessage('Failed to add meet. Please try again.');
+      }
+    });
+
+    // Settings form
+    document.getElementById('form-settings').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const btn = document.getElementById('btn-save-settings');
+      btn.disabled = true;
+      btn.textContent = 'Saving...';
+
+      const config = window.elementSdk ? window.elementSdk.config : defaultConfig;
+      const updates = {};
+
+      const teamName = document.getElementById('settings-team-name').value;
+      const coachName = document.getElementById('settings-coach-name').value;
+      const tagline = document.getElementById('settings-tagline').value;
+      const description = document.getElementById('settings-description').value;
+      const weekday = document.getElementById('settings-weekday').value;
+      const weekend = document.getElementById('settings-weekend').value;
+      const location = document.getElementById('settings-location').value;
+      const password = document.getElementById('settings-password').value;
+
+      if (teamName) updates.team_name = teamName;
+      if (coachName) updates.coach_name = coachName;
+      if (tagline) updates.hero_tagline = tagline;
+      if (description) updates.hero_description = description;
+      if (weekday) updates.weekday_schedule = weekday;
+      if (weekend) updates.weekend_schedule = weekend;
+      if (location) updates.training_location = location;
+      if (password) updates.admin_password = password;
+
+      if (window.elementSdk && Object.keys(updates).length > 0) {
+        await window.elementSdk.setConfig(updates);
+        showMessage('Settings saved successfully!', 'success');
+        if (password) {
+          document.getElementById('settings-password').value = '';
+        }
+      }
+
+      btn.disabled = false;
+      btn.textContent = '💾 Save Settings';
+    });
+
+    function loadSettingsForm() {
+      const config = window.elementSdk ? window.elementSdk.config : defaultConfig;
+      
+      document.getElementById('settings-team-name').value = config.team_name || defaultConfig.team_name;
+      document.getElementById('settings-coach-name').value = config.coach_name || defaultConfig.coach_name;
+      document.getElementById('settings-tagline').value = config.hero_tagline || defaultConfig.hero_tagline;
+      document.getElementById('settings-description').value = config.hero_description || defaultConfig.hero_description;
+      document.getElementById('settings-weekday').value = config.weekday_schedule || defaultConfig.weekday_schedule;
+      document.getElementById('settings-weekend').value = config.weekend_schedule || defaultConfig.weekend_schedule;
+      document.getElementById('settings-location').value = config.training_location || defaultConfig.training_location;
+    }
+
+    function renderAdminView() {
+      switch(adminView) {
+        case 'swimmers':
+          renderSwimmers();
+          break;
+        case 'times':
+          renderTimes();
+          break;
+        case 'meets':
+          renderMeets();
+          break;
+        case 'news':
+          renderNews();
+          break;
+      }
+      renderLandingNews();
+    }
+
+    function renderSwimmers() {
+      const swimmers = allData.filter(d => d.type === 'swimmer');
+      const container = document.getElementById('swimmers-list');
+      
+      if (swimmers.length === 0) {
+        container.innerHTML = '<p class="text-gray-500 text-center py-12 text-lg">No swimmers added yet. Add your first swimmer above!</p>';
+        return;
+      }
+
+      container.innerHTML = swimmers.map(swimmer => `
+        <div class="glass-effect rounded-xl p-6 hover:shadow-xl transition-all fade-in border-l-4 border-cyan-500 transform hover:scale-102">
+          <div class="flex justify-between items-start gap-4">
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-800 mb-3">🏊‍♂️ ${swimmer.swimmer_name}</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🎂</span>
+                  <div>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Age</p>
+                    <p class="text-gray-800 font-semibold">${swimmer.age} years</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">👤</span>
+                  <div>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Parent</p>
+                    <p class="text-gray-800 font-semibold">${swimmer.parent_name}</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">✉️</span>
+                  <div>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Email</p>
+                    <p class="text-gray-800 font-semibold text-sm">${swimmer.parent_email}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="editSwimmer('${swimmer.__backendId}')" class="px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-600 font-bold rounded-lg transition-all transform hover:scale-105">
+                ✏️ Edit
+              </button>
+              <button onclick="deleteRecord('${swimmer.__backendId}')" class="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-600 font-bold rounded-lg transition-all transform hover:scale-105">
+                🗑️ Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderNews() {
+      const news = allData.filter(d => d.type === 'news');
+      const container = document.getElementById('news-list');
+      
+      if (news.length === 0) {
+        container.innerHTML = '<p class="text-gray-500 text-center py-12 text-lg">No news posted yet. Use the Data button above to add team news!</p>';
+        return;
+      }
+
+      const sortedNews = news.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      container.innerHTML = sortedNews.map(item => {
+        let mediaHTML = '';
+        
+        if (item.image_url) {
+          mediaHTML += `
+            <div class="mt-4 rounded-xl overflow-hidden border-2 border-gray-200">
+              <img src="${item.image_url}" alt="${item.news_title}" class="w-full h-auto max-h-96 object-cover" 
+                   onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-red-50 p-4 text-red-600 text-center\'>Image failed to load</div>';">
+            </div>
+          `;
+        }
+        
+        if (item.video_url) {
+          const isYouTube = item.video_url.includes('youtube.com') || item.video_url.includes('youtu.be');
+          let videoId = '';
+          
+          if (isYouTube) {
+            const urlObj = new URL(item.video_url);
+            videoId = urlObj.searchParams.get('v') || urlObj.pathname.split('/').pop();
+            mediaHTML += `
+              <div class="mt-4 rounded-xl overflow-hidden border-2 border-gray-200">
+                <div class="relative" style="padding-bottom: 56.25%; height: 0;">
+                  <iframe 
+                    src="https://www.youtube.com/embed/${videoId}" 
+                    class="absolute top-0 left-0 w-full h-full"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            `;
+          } else {
+            mediaHTML += `
+              <div class="mt-4 rounded-xl overflow-hidden border-2 border-gray-200">
+                <video controls class="w-full h-auto max-h-96" 
+                       onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-red-50 p-4 text-red-600 text-center\'>Video failed to load</div>';">
+                  <source src="${item.video_url}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            `;
+          }
+        }
+
+        return `
+          <div class="glass-effect rounded-xl p-6 hover:shadow-xl transition-all fade-in border-l-4 border-cyan-600">
+            <div class="flex justify-between items-start gap-4">
+              <div class="flex-1">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-2xl">📰</span>
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-800">${item.news_title}</h3>
+                    <p class="text-sm text-gray-500">${new Date(item.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  </div>
+                </div>
+                <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">${item.news_content}</p>
+                ${mediaHTML}
+              </div>
+              <button onclick="deleteRecord('${item.__backendId}')" class="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-600 font-bold rounded-lg transition-all">
+                🗑️ Delete
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderLandingNews() {
+      const news = allData.filter(d => d.type === 'news');
+      const container = document.getElementById('landing-news-list');
+      
+      if (!container) return;
+      
+      if (news.length === 0) {
+        container.innerHTML = '<p class="text-white text-center py-8 opacity-70">No news available at this time.</p>';
+        return;
+      }
+
+      const sortedNews = news.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      container.innerHTML = sortedNews.map(item => {
+        let mediaHTML = '';
+        
+        if (item.image_url) {
+          mediaHTML += `
+            <div class="mt-4 rounded-xl overflow-hidden border-2 border-cyan-500">
+              <img src="${item.image_url}" alt="${item.news_title}" class="w-full h-auto max-h-96 object-cover" 
+                   onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-red-900 bg-opacity-50 p-4 text-red-300 text-center rounded-xl\'>Image failed to load</div>';">
+            </div>
+          `;
+        }
+        
+        if (item.video_url) {
+          const isYouTube = item.video_url.includes('youtube.com') || item.video_url.includes('youtu.be');
+          
+          if (isYouTube) {
+            const urlObj = new URL(item.video_url);
+            const videoId = urlObj.searchParams.get('v') || urlObj.pathname.split('/').pop();
+            mediaHTML += `
+              <div class="mt-4 rounded-xl overflow-hidden border-2 border-cyan-500">
+                <div class="relative" style="padding-bottom: 56.25%; height: 0;">
+                  <iframe 
+                    src="https://www.youtube.com/embed/${videoId}" 
+                    class="absolute top-0 left-0 w-full h-full"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            `;
+          } else {
+            mediaHTML += `
+              <div class="mt-4 rounded-xl overflow-hidden border-2 border-cyan-500">
+                <video controls class="w-full h-auto max-h-96" 
+                       onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-red-900 bg-opacity-50 p-4 text-red-300 text-center rounded-xl\'>Video failed to load</div>';">
+                  <source src="${item.video_url}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            `;
+          }
+        }
+
+        return `
+          <div class="glass-effect rounded-xl p-8 hover:shadow-2xl transition-all border-2 border-cyan-500">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-4xl">📰</span>
+              <div class="flex-1">
+                <h4 class="text-2xl font-bold text-white mb-1">${item.news_title}</h4>
+                <p class="text-cyan-300 text-sm">${new Date(item.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+              </div>
+            </div>
+            <p class="text-white leading-relaxed whitespace-pre-wrap opacity-90">${item.news_content}</p>
+            ${mediaHTML}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderTimes() {
+      const times = allData.filter(d => d.type === 'time');
+      const container = document.getElementById('times-list');
+      
+      if (times.length === 0) {
+        container.innerHTML = '<p class="text-gray-500 text-center py-12 text-lg">No times recorded yet. Add times using the form above!</p>';
+        return;
+      }
+
+      const sortedTimes = times.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      container.innerHTML = sortedTimes.map(time => `
+        <div class="glass-effect rounded-xl p-6 hover:shadow-xl transition-all fade-in border-l-4 border-purple-600">
+          <div class="flex justify-between items-start gap-4">
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-800 mb-1">${time.swimmer_name}</h3>
+              <p class="text-gray-600 mb-3">${time.event_name}</p>
+              <div class="flex items-center gap-6">
+                <div class="stat-card p-4 rounded-xl">
+                  <p class="text-xs text-gray-500 uppercase font-semibold mb-1">Time</p>
+                  <p class="text-3xl font-bold text-blue-600">${time.time}</p>
+                </div>
+                <div>
+                  <p class="text-xs text-gray-500 uppercase font-semibold mb-1">Date</p>
+                  <p class="text-gray-800 font-semibold">${new Date(time.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                </div>
+              </div>
+              ${time.meet_name ? `<p class="mt-3 text-sm text-gray-600"><strong>Meet:</strong> ${time.meet_name}</p>` : ''}
+            </div>
+            <button onclick="deleteRecord('${time.__backendId}')" class="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-600 font-bold rounded-lg transition-all">
+              🗑️ Delete
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderMeets() {
+      const meets = allData.filter(d => d.type === 'meet');
+      const container = document.getElementById('meets-list');
+      
+      if (meets.length === 0) {
+        container.innerHTML = '<p class="text-gray-500 text-center py-12 text-lg">No upcoming meets scheduled. Add meets using the form above!</p>';
+        return;
+      }
+
+      const sortedMeets = meets.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      container.innerHTML = sortedMeets.map(meet => `
+        <div class="glass-effect rounded-xl p-6 hover:shadow-xl transition-all fade-in border-l-4 border-green-600 bg-gradient-to-r from-blue-50 to-purple-50">
+          <div class="flex justify-between items-start gap-4">
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">${meet.event_name}</h3>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <span class="text-2xl">📅</span>
+                  <div>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Date</p>
+                    <p class="text-gray-800 font-bold">${new Date(meet.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-2xl">📍</span>
+                  <div>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Location</p>
+                    <p class="text-gray-800 font-bold">${meet.meet_location}</p>
+                  </div>
+                </div>
+                ${meet.notes ? `
+                  <div class="mt-4 p-4 bg-white rounded-lg border-2 border-blue-200">
+                    <p class="text-xs text-gray-500 uppercase font-semibold mb-2">📝 Important Notes</p>
+                    <p class="text-gray-800">${meet.notes}</p>
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+            <button onclick="deleteRecord('${meet.__backendId}')" class="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-600 font-bold rounded-lg transition-all">
+              🗑️ Delete
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function updateSwimmerDropdown() {
+      const swimmers = allData.filter(d => d.type === 'swimmer');
+      const select = document.getElementById('time-swimmer');
+      const currentValue = select.value;
+      
+      select.innerHTML = '<option value="">Select swimmer</option>' + 
+        swimmers.map(s => `<option value="${s.swimmer_name}">${s.swimmer_name}</option>`).join('');
+      
+      if (currentValue && swimmers.some(s => s.swimmer_name === currentValue)) {
+        select.value = currentValue;
+      }
+    }
+
+    function updateParentPortalDropdown() {
+      const swimmers = allData.filter(d => d.type === 'swimmer');
+      const select = document.getElementById('parent-swimmer-select');
+      
+      select.innerHTML = '<option value="">Choose your child...</option>' + 
+        swimmers.map(s => `<option value="${s.swimmer_name}">${s.swimmer_name}</option>`).join('');
+    }
+
+    document.getElementById('parent-swimmer-select').addEventListener('change', (e) => {
+      const swimmerName = e.target.value;
+      if (swimmerName) {
+        renderParentPortal(swimmerName);
+        document.getElementById('parent-portal-content').classList.remove('hidden');
+      } else {
+        document.getElementById('parent-portal-content').classList.add('hidden');
+      }
+    });
+
+    function renderParentPortal(swimmerName) {
+      const swimmerTimes = allData.filter(d => d.type === 'time' && d.swimmer_name === swimmerName);
+      const meets = allData.filter(d => d.type === 'meet');
+      const news = allData.filter(d => d.type === 'news');
+      
+      document.getElementById('parent-swimmer-name').textContent = `${swimmerName}'s Performance`;
+      
+      const totalSwims = swimmerTimes.length;
+      const uniqueEvents = new Set(swimmerTimes.map(t => t.event_name)).size;
+      
+      const eventBestTimes = {};
+      swimmerTimes.forEach(time => {
+        if (!eventBestTimes[time.event_name] || timeToSeconds(time.time) < timeToSeconds(eventBestTimes[time.event_name].time)) {
+          eventBestTimes[time.event_name] = time;
+        }
+      });
+      const personalRecords = Object.keys(eventBestTimes).length;
+      
+      document.getElementById('parent-stat-swims').textContent = totalSwims;
+      document.getElementById('parent-stat-prs').textContent = personalRecords;
+      document.getElementById('parent-stat-events').textContent = uniqueEvents;
+      
+      renderProgressionChart(swimmerName, swimmerTimes);
+      renderEventBreakdown(swimmerName, swimmerTimes);
+      renderParentMeets(meets);
+      renderParentNews(news);
+    }
+
+    function renderProgressionChart(swimmerName, swimmerTimes) {
+      const container = document.getElementById('parent-progression-chart');
+      
+      if (swimmerTimes.length === 0) {
+        container.innerHTML = '<p class="text-gray-500 text-center py-8">No times recorded yet to show progression.</p>';
+        return;
+      }
+      
+      const eventGroups = {};
+      swimmerTimes.forEach(time => {
+        if (!eventGroups[time.event_name]) {
+          eventGroups[time.event_name] = [];
+        }
+        eventGroups[time.event_name].push(time);
+      });
+      
+      const chartsHTML = Object.entries(eventGroups).map(([eventName, times], eventIndex) => {
+        const sortedTimes = times.sort((a, b) => new Date(a.date) - new Date(b.date));
+        
+        if (sortedTimes.length < 2) {
+          return `
+            <div class="border-2 border-gray-200 rounded-xl p-6 bg-white">
+              <h4 class="text-lg font-bold text-gray-800 mb-3">${eventName}</h4>
+              <p class="text-gray-500 text-sm">Need at least 2 recorded times to show progression</p>
+            </div>
+          `;
+        }
+        
+        const timeValues = sortedTimes.map(t => timeToSeconds(t.time));
+        const minTime = Math.min(...timeValues);
+        const maxTime = Math.max(...timeValues);
+        const timeRange = maxTime - minTime;
+        const padding = timeRange * 0.2 || 1;
+        
+        const chartMin = minTime - padding;
+        const chartMax = maxTime + padding;
+        const chartRange = chartMax - chartMin;
+        
+        const chartHeight = 300;
+        const chartWidth = 100;
+        const leftMargin = 60;
+        const rightMargin = 20;
+        const topMargin = 20;
+        const bottomMargin = 60;
+        
+        const points = sortedTimes.map((time, index) => {
+          const x = leftMargin + (index / (sortedTimes.length - 1)) * (chartWidth - leftMargin - rightMargin);
+          const seconds = timeToSeconds(time.time);
+          const y = topMargin + ((chartMax - seconds) / chartRange) * (chartHeight - topMargin - bottomMargin);
+          return { x, y, time, seconds, index };
+        });
+        
+        const pathData = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x}% ${p.y}`).join(' ');
+        
+        const yAxisLabels = [];
+        const numLabels = 5;
+        for (let i = 0; i <= numLabels; i++) {
+          const seconds = chartMin + (i / numLabels) * chartRange;
+          const y = topMargin + ((chartMax - seconds) / chartRange) * (chartHeight - topMargin - bottomMargin);
+          yAxisLabels.push({ y, label: secondsToTime(seconds) });
+        }
+        
+        const firstTime = timeValues[0];
+        const lastTime = timeValues[timeValues.length - 1];
+        const improvement = firstTime - lastTime;
+        const improvementPercent = (improvement / firstTime * 100).toFixed(1);
+        
+        let trendHTML = '';
+        if (improvement > 0) {
+          trendHTML = `<span class="text-green-600 font-bold text-lg">↓ Improved by ${improvement.toFixed(2)}s (${improvementPercent}%)</span>`;
+        } else if (improvement < 0) {
+          trendHTML = `<span class="text-red-600 font-bold text-lg">↑ Slower by ${Math.abs(improvement).toFixed(2)}s (${Math.abs(improvementPercent)}%)</span>`;
+        } else {
+          trendHTML = `<span class="text-gray-600 font-bold text-lg">→ No change</span>`;
+        }
+        
+        const colors = ['#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981'];
+        const lineColor = colors[eventIndex % colors.length];
+        
+        return `
+          <div class="border-2 border-gray-200 rounded-xl p-6 bg-white">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-xl font-bold text-gray-800">${eventName}</h4>
+              ${trendHTML}
+            </div>
+            
+            <div class="relative" style="height: ${chartHeight}px;">
+              <svg width="100%" height="100%" style="overflow: visible;">
+                ${yAxisLabels.map(label => `
+                  <text x="0" y="${label.y}" font-size="11" fill="#6b7280" text-anchor="start" dominant-baseline="middle">
+                    ${label.label}
+                  </text>
+                  <line x1="${leftMargin - 5}%" y1="${label.y}" x2="${leftMargin}%" y2="${label.y}" stroke="#d1d5db" stroke-width="1"/>
+                `).join('')}
+                
+                ${yAxisLabels.map(label => `
+                  <line x1="${leftMargin}%" y1="${label.y}" x2="${chartWidth - rightMargin}%" y2="${label.y}" stroke="#f3f4f6" stroke-width="1" stroke-dasharray="4"/>
+                `).join('')}
+                
+                <path d="${pathData}" fill="none" stroke="${lineColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                
+                <path d="${pathData} L ${points[points.length - 1].x}% ${chartHeight - bottomMargin} L ${points[0].x}% ${chartHeight - bottomMargin} Z" 
+                      fill="${lineColor}" fill-opacity="0.1"/>
+                
+                ${points.map(p => `
+                  <circle cx="${p.x}%" cy="${p.y}" r="5" fill="white" stroke="${lineColor}" stroke-width="3"/>
+                  <circle cx="${p.x}%" cy="${p.y}" r="3" fill="${lineColor}"/>
+                `).join('')}
+                
+                ${points.map(p => {
+                  const date = new Date(p.time.date);
+                  const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                  return `
+                    <text x="${p.x}%" y="${chartHeight - bottomMargin + 20}" 
+                          font-size="11" fill="#6b7280" text-anchor="middle" 
+                          transform="rotate(-45 ${p.x * chartWidth / 100} ${chartHeight - bottomMargin + 20})">
+                      ${label}
+                    </text>
+                    <text x="${p.x}%" y="${chartHeight - bottomMargin + 35}" 
+                          font-size="10" fill="#9ca3af" text-anchor="middle" font-weight="bold"
+                          transform="rotate(-45 ${p.x * chartWidth / 100} ${chartHeight - bottomMargin + 35})">
+                      ${p.time.time}
+                    </text>
+                  `;
+                }).join('')}
+              </svg>
+            </div>
+            
+            <div class="mt-4 grid grid-cols-3 gap-4 text-center text-sm">
+              <div class="p-3 bg-blue-50 rounded-lg">
+                <p class="text-xs text-gray-600 font-semibold mb-1">First Time</p>
+                <p class="text-lg font-bold text-blue-600">${sortedTimes[0].time}</p>
+                <p class="text-xs text-gray-500">${new Date(sortedTimes[0].date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</p>
+              </div>
+              <div class="p-3 bg-green-50 rounded-lg">
+                <p class="text-xs text-gray-600 font-semibold mb-1">Best Time</p>
+                <p class="text-lg font-bold text-green-600">${secondsToTime(minTime)}</p>
+              </div>
+              <div class="p-3 bg-purple-50 rounded-lg">
+                <p class="text-xs text-gray-600 font-semibold mb-1">Latest Time</p>
+                <p class="text-lg font-bold text-purple-600">${sortedTimes[sortedTimes.length - 1].time}</p>
+                <p class="text-xs text-gray-500">${new Date(sortedTimes[sortedTimes.length - 1].date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      
+      container.innerHTML = chartsHTML || '<p class="text-gray-500 text-center py-8">No progression data available.</p>';
+    }
+
+    function secondsToTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = (seconds % 60).toFixed(2);
+      return `${mins}:${secs.padStart(5, '0')}`;
+    }
+
+    function renderEventBreakdown(swimmerName, swimmerTimes) {
+      const container = document.getElementById('parent-event-breakdown');
+      
+      if (swimmerTimes.length === 0) {
+        container.innerHTML = '<p class="text-gray-500 text-center py-8">No times recorded yet.</p>';
+        return;
+      }
+      
+      const eventGroups = {};
+      swimmerTimes.forEach(time => {
+        if (!eventGroups[time.event_name]) {
+          eventGroups[time.event_name] = [];
+        }
+        eventGroups[time.event_name].push(time);
+      });
+      
+      container.innerHTML = Object.entries(eventGroups).map(([eventName, times]) => {
+        const sortedTimes = times.sort((a, b) => new Date(b.date) - new Date(a.date));
+        
+        const bestTime = times.reduce((best, current) => 
+          timeToSeconds(current.time) < timeToSeconds(best.time) ? current : best
+        );
+        
+        let improvementHTML = '';
+        if (sortedTimes.length > 1) {
+          const latestTime = sortedTimes[0];
+          const oldestTime = sortedTimes[sortedTimes.length - 1];
+          const improvement = ((timeToSeconds(oldestTime.time) - timeToSeconds(latestTime.time)) / timeToSeconds(oldestTime.time) * 100);
+          
+          if (improvement > 0) {
+            improvementHTML = `<span class="text-green-600 font-bold">↓ ${improvement.toFixed(1)}% faster</span>`;
+          } else if (improvement < 0) {
+            improvementHTML = `<span class="text-red-600 font-bold">↑ ${Math.abs(improvement).toFixed(1)}% slower</span>`;
+          }
+        }
+        
+        return `
+          <div class="border-2 border-gray-200 rounded-xl p-6 bg-gradient-to-br from-blue-50 to-purple-50">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-xl font-bold text-gray-800">${eventName}</h4>
+              ${improvementHTML ? `<div class="text-sm">${improvementHTML}</div>` : ''}
+            </div>
+            
+            <div class="mb-4 p-4 bg-green-100 border-2 border-green-500 rounded-lg pb-glow pb-pulse">
+              <p class="text-xs text-green-700 uppercase font-bold mb-1">🏆 Personal Best</p>
+              <div class="flex items-center justify-between">
+                <p class="text-3xl font-bold text-green-700">${bestTime.time}</p>
+                <div class="text-right">
+                  <p class="text-sm text-green-700">${new Date(bestTime.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                  ${bestTime.meet_name ? `<p class="text-xs text-green-600">${bestTime.meet_name}</p>` : ''}
+                </div>
+              </div>
+            </div>
+            
+            <div class="space-y-2">
+              <p class="text-sm font-bold text-gray-700 mb-2">All Times (${sortedTimes.length} total):</p>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="border-b-2 border-gray-300">
+                      <th class="text-left py-2 px-2 font-bold text-gray-700">Date</th>
+                      <th class="text-left py-2 px-2 font-bold text-gray-700">Time</th>
+                      <th class="text-left py-2 px-2 font-bold text-gray-700">Meet</th>
+                      <th class="text-right py-2 px-2 font-bold text-gray-700">vs Best</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${sortedTimes.map(time => {
+                      const isBest = time.time === bestTime.time && time.date === bestTime.date;
+                      const diff = timeToSeconds(time.time) - timeToSeconds(bestTime.time);
+                      const diffDisplay = diff === 0 ? 'PR' : `+${diff.toFixed(2)}s`;
+                      
+                      return `
+                        <tr class="${isBest ? 'bg-green-50 font-bold' : ''} border-b border-gray-200">
+                          <td class="py-2 px-2">${new Date(time.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
+                          <td class="py-2 px-2 font-bold ${isBest ? 'text-green-700' : 'text-gray-800'}">${time.time} ${isBest ? '🏆' : ''}</td>
+                          <td class="py-2 px-2 text-gray-600">${time.meet_name || 'Practice'}</td>
+                          <td class="py-2 px-2 text-right ${isBest ? 'text-green-700' : 'text-gray-600'}">${diffDisplay}</td>
+                        </tr>
+                      `;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderParentMeets(meets) {
+      const container = document.getElementById('parent-meets-list');
+      
+      if (meets.length === 0) {
+        container.innerHTML = '<p class="text-gray-500 text-center py-8">No upcoming meets scheduled.</p>';
+        return;
+      }
+      
+      const sortedMeets = meets.sort((a, b) => new Date(a.date) - new Date(b.date));
+      
+      container.innerHTML = sortedMeets.map(meet => `
+        <div class="border-2 border-blue-300 rounded-xl p-6 bg-gradient-to-r from-blue-50 to-purple-50">
+          <h4 class="text-xl font-bold text-gray-800 mb-3">${meet.event_name}</h4>
+          <div class="space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">📅</span>
+              <p class="text-gray-800"><strong>Date:</strong> ${new Date(meet.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xl">📍</span>
+              <p class="text-gray-800"><strong>Location:</strong> ${meet.meet_location}</p>
+            </div>
+            ${meet.notes ? `
+              <div class="mt-3 p-3 bg-white rounded-lg border border-blue-200">
+                <p class="text-sm text-gray-700"><strong>📝 Notes:</strong> ${meet.notes}</p>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderParentNews(news) {
+      const container = document.getElementById('parent-news-list');
+      
+      if (news.length === 0) {
+        container.innerHTML = '<p class="text-gray-500 text-center py-8">No team news available yet.</p>';
+        return;
+      }
+      
+      const sortedNews = news.sort((a, b) => new Date(b.date) - new Date(a.date));
+      
+      container.innerHTML = sortedNews.map(item => {
+        let mediaHTML = '';
+        
+        if (item.image_url) {
+          mediaHTML += `
+            <div class="mt-4 rounded-xl overflow-hidden border-2 border-gray-200">
+              <img src="${item.image_url}" alt="${item.news_title}" class="w-full h-auto max-h-96 object-cover" 
+                   onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-red-50 p-4 text-red-600 text-center\'>Image failed to load</div>';">
+            </div>
+          `;
+        }
+        
+        if (item.video_url) {
+          const isYouTube = item.video_url.includes('youtube.com') || item.video_url.includes('youtu.be');
+          
+          if (isYouTube) {
+            const urlObj = new URL(item.video_url);
+            const videoId = urlObj.searchParams.get('v') || urlObj.pathname.split('/').pop();
+            mediaHTML += `
+              <div class="mt-4 rounded-xl overflow-hidden border-2 border-gray-200">
+                <div class="relative" style="padding-bottom: 56.25%; height: 0;">
+                  <iframe 
+                    src="https://www.youtube.com/embed/${videoId}" 
+                    class="absolute top-0 left-0 w-full h-full"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            `;
+          } else {
+            mediaHTML += `
+              <div class="mt-4 rounded-xl overflow-hidden border-2 border-gray-200">
+                <video controls class="w-full h-auto max-h-96">
+                  <source src="${item.video_url}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            `;
+          }
+        }
+        
+        return `
+          <div class="border-2 border-cyan-300 rounded-xl p-6 bg-gradient-to-r from-cyan-50 to-blue-50">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-3xl">📰</span>
+              <div class="flex-1">
+                <h4 class="text-xl font-bold text-gray-800">${item.news_title}</h4>
+                <p class="text-sm text-gray-600">${new Date(item.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+              </div>
+            </div>
+            <p class="text-gray-700 leading-relaxed whitespace-pre-wrap pl-12">${item.news_content}</p>
+            <div class="pl-12">
+              ${mediaHTML}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function timeToSeconds(timeString) {
+      const parts = timeString.split(':');
+      const minutes = parseInt(parts[0]);
+      const seconds = parseFloat(parts[1]);
+      return minutes * 60 + seconds;
+    }
+
+    async function deleteRecord(backendId) {
+      const record = allData.find(r => r.__backendId === backendId);
+      if (!record) return;
+
+      const result = await deleteRecordLocal(record);
+      
+      if (!result.isOk) {
+        showMessage('Failed to delete record. Please try again.');
+      }
+    }
+
+    function editSwimmer(backendId) {
+      const swimmer = allData.find(r => r.__backendId === backendId && r.type === 'swimmer');
+      if (!swimmer) return;
+
+      document.getElementById('swimmer-name').value = swimmer.swimmer_name;
+      document.getElementById('swimmer-age').value = swimmer.age;
+      document.getElementById('parent-name').value = swimmer.parent_name;
+      document.getElementById('parent-email').value = swimmer.parent_email;
+
+      const formTitle = document.querySelector('#view-swimmers h2');
+      formTitle.textContent = 'Edit Swimmer';
+      
+      const submitBtn = document.getElementById('btn-add-swimmer');
+      submitBtn.textContent = '💾 Update Swimmer';
+      
+      const form = document.getElementById('form-add-swimmer');
+      const cancelBtn = document.createElement('button');
+      cancelBtn.type = 'button';
+      cancelBtn.className = 'md:col-span-2 w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-4 rounded-xl transition-all';
+      cancelBtn.textContent = 'Cancel Edit';
+      cancelBtn.onclick = () => {
+        form.reset();
+        formTitle.textContent = 'Add New Swimmer';
+        submitBtn.textContent = '🏊‍♂️ Add Swimmer';
+        cancelBtn.remove();
+        delete form.dataset.editId;
+      };
+      
+      if (!document.querySelector('#form-add-swimmer button[type="button"]')) {
+        form.appendChild(cancelBtn);
+      }
+      
+      form.dataset.editId = backendId;
+      
+      document.querySelector('#view-swimmers').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showMessage(message, type = 'error') {
+      const messageDiv = document.createElement('div');
+      const bgColor = type === 'success' ? 'bg-green-500' : 'bg-red-500';
+      messageDiv.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50`;
+      messageDiv.textContent = message;
+      document.body.appendChild(messageDiv);
+      
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 3000);
+    }
+
+    window.deleteRecord = deleteRecord;
+    window.editSwimmer = editSwimmer;
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b7da72c15b3703f',t:'MTc2NzM5MjUyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
